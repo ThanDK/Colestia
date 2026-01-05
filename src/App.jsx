@@ -5,7 +5,7 @@ import { Construction, ArrowRight } from 'lucide-react';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Cursor from './components/Cursor';
+
 import ScrollManager from './components/ScrollManager';
 import Home from './pages/Home';
 import Products from './pages/Products';
@@ -66,8 +66,7 @@ const App = () => {
   const hideNavFooter = pathname === '/login' || pathname === '/register';
 
   return (
-    <div className="min-h-screen bg-colestia-bg text-white selection:bg-colestia-gold selection:text-black cursor-none">
-      <Cursor />
+    <div className="min-h-screen bg-colestia-bg text-white selection:bg-colestia-gold selection:text-black">
       <ScrollManager>
         {!hideNavFooter && <Navbar />}
 
