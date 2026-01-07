@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Search, Edit2, Trash2, X, Save, Upload, User } from 'lucide-react';
-import { db } from '../../firebase';
-import { collection, addDoc, updateDoc, deleteDoc, doc } from 'firebase/firestore';
 import { useDirectors } from '../../hooks/useDirectors';
 
 const AdminDirectors = () => {

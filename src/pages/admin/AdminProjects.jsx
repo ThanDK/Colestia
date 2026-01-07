@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { collection, onSnapshot, addDoc, updateDoc, deleteDoc, doc } from 'firebase/firestore';
-import { db } from '../../firebase';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Edit2, Trash2, X, Save, Search, Loader } from 'lucide-react';
+import { projects as initialProjects, comingSoonMovies } from '../../data/projectsData';
 
 const AdminProjects = () => {
     const [projects, setProjects] = useState([]);
@@ -15,25 +14,14 @@ const AdminProjects = () => {
         startDate: '', endDate: '', director: '', status: 'active'
     });
 
-    const projectsCollectionRef = collection(db, "projects");
-
     useEffect(() => {
-        const safetyTimeout = setTimeout(() => {
-            if (isLoading) setIsLoading(false);
-        }, 5000);
-
-        const unsubscribe = onSnapshot(projectsCollectionRef, (snapshot) => {
-            setProjects(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-            setIsLoading(false);
-        }, (error) => {
-            console.error("Error fetching projects:", error);
-            setIsLoading(false);
-        });
-
-        return () => {
-            unsubscribe();
-            clearTimeout(safetyTimeout);
-        };
+        // Use static data directly (mockup mode)
+        const allProjects = [...initialProjects, ...comingSoonMovies].map((p, index) => ({
+            ...p,
+            id: p.id?.toString() || `project-${index}`
+        }));
+        setProjects(allProjects);
+        setIsLoading(false);
     }, []);
 
     const handleInputChange = (e) => {

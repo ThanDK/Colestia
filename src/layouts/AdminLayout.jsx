@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet, Navigate, Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { LayoutDashboard, Film, LogOut, Home, User, Users } from 'lucide-react';
+import { LayoutDashboard, Film, LogOut, Home, User, Users, Newspaper, BookOpen, UserCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const AdminLayout = () => {
@@ -18,6 +18,9 @@ const AdminLayout = () => {
         { path: '/admin/projects', icon: Film, label: 'Projects' },
         { path: '/admin/directors', icon: User, label: 'Directors' },
         { path: '/admin/team', icon: Users, label: 'Team' },
+        { path: '/admin/users', icon: UserCircle, label: 'Users' },
+        { path: '/admin/news', icon: Newspaper, label: 'News' },
+        { path: '/admin/education', icon: BookOpen, label: 'Education' },
     ];
 
     return (

@@ -297,7 +297,7 @@ const Products = () => {
     const filteredMovies = useMemo(() => {
         if (selectedGenre === 'all') return projects;
         return projects.filter(movie => movie.genre === selectedGenre);
-    }, [selectedGenre]);
+    }, [selectedGenre, projects]);
 
     // Separate movies into Sale and New
     const onSaleMovies = useMemo(() =>

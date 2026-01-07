@@ -1,37 +1,46 @@
-import React, { useState, useEffect } from 'react';
-import { collection, onSnapshot, updateDoc, deleteDoc, doc } from 'firebase/firestore';
-import { db } from '../../firebase';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Edit2, Trash2, X, Save, Loader, Shield, User } from 'lucide-react';
+import { Search, Trash2, X, Save, Loader, Shield, User, Plus } from 'lucide-react';
+
+// Static mockup data for Users
+const initialUsers = [
+    {
+        id: '1',
+        displayName: 'สมชาย ใจดี',
+        email: 'somchai@example.com',
+        role: 'admin',
+        createdAt: '2026-01-01'
+    },
+    {
+        id: '2',
+        displayName: 'สมหญิง รักเรียน',
+        email: 'somying@example.com',
+        role: 'user',
+        createdAt: '2026-01-03'
+    },
+    {
+        id: '3',
+        displayName: 'John Investor',
+        email: 'john.investor@gmail.com',
+        role: 'user',
+        createdAt: '2026-01-05'
+    },
+    {
+        id: '4',
+        displayName: 'พิมพ์ใจ งามเด่น',
+        email: 'pimjai@colestia.io',
+        role: 'admin',
+        createdAt: '2025-12-20'
+    }
+];
 
 const AdminUsers = () => {
-    const [users, setUsers] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [users, setUsers] = useState(initialUsers);
+    const [isLoading, setIsLoading] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [editingUser, setEditingUser] = useState(null);
     const [formData, setFormData] = useState({ role: 'user' });
-
-    const usersCollectionRef = collection(db, "users");
-
-    useEffect(() => {
-        const safetyTimeout = setTimeout(() => {
-            if (isLoading) setIsLoading(false);
-        }, 5000);
-
-        const unsubscribe = onSnapshot(usersCollectionRef, (snapshot) => {
-            setUsers(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-            setIsLoading(false);
-        }, (error) => {
-            console.error("Error fetching users:", error);
-            setIsLoading(false);
-        });
-
-        return () => {
-            unsubscribe();
-            clearTimeout(safetyTimeout);
-        };
-    }, []);
 
     const openModal = (user) => {
         setEditingUser(user);
@@ -39,21 +48,16 @@ const AdminUsers = () => {
         setIsModalOpen(true);
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        try {
-            await updateDoc(doc(db, 'users', editingUser.id), { role: formData.role });
-            alert('User role updated!');
-            setIsModalOpen(false);
-        } catch (error) {
-            console.error("Error updating user:", error);
-            alert('Error updating user');
-        }
+        setUsers(users.map(u => u.id === editingUser.id ? { ...u, role: formData.role } : u));
+        alert('User role updated! (Mockup Mode)');
+        setIsModalOpen(false);
     };
 
-    const handleDelete = async (id) => {
+    const handleDelete = (id) => {
         if (window.confirm('Are you sure you want to delete this user?')) {
-            await deleteDoc(doc(db, 'users', id));
+            setUsers(users.filter(u => u.id !== id));
         }
     };
 
@@ -117,8 +121,8 @@ const AdminUsers = () => {
                                     <td className="px-6 py-4 text-gray-600 dark:text-gray-300">{user.email}</td>
                                     <td className="px-6 py-4">
                                         <span className={`px-2 py-1 rounded-full text-xs font-medium ${user.role === 'admin'
-                                                ? 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'
-                                                : 'bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300'
+                                            ? 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'
+                                            : 'bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300'
                                             }`}>
                                             {user.role || 'user'}
                                         </span>

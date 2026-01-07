@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import { collection, onSnapshot } from 'firebase/firestore';
-import { db } from '../firebase';
+import { directors as initialDirectors } from '../data/creatorsData';
 
 export const useDirectors = () => {
     const [directors, setDirectors] = useState([]);
@@ -8,30 +7,16 @@ export const useDirectors = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        const safetyTimeout = setTimeout(() => {
-            if (isLoading) {
-                console.warn("Firestore snapshot timed out, forcing loading false");
-                setIsLoading(false);
-            }
-        }, 5000);
-
-        const collectionRef = collection(db, 'directors');
-        const unsubscribe = onSnapshot(collectionRef, (snapshot) => {
-            const data = snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }));
-            setDirectors(data);
-            setIsLoading(false);
-        }, (err) => {
-            console.error("Error fetching directors:", err);
-            setError(err);
-            setIsLoading(false);
-        });
-
-        return () => {
-            unsubscribe();
-            clearTimeout(safetyTimeout);
-        };
+        // Use static data directly (mockup mode)
+        const data = initialDirectors.map((d, index) => ({
+            ...d,
+            id: `director-${index}`
+        }));
+        setDirectors(data);
+        setIsLoading(false);
     }, []);
 
     return { directors, isLoading, error };
 };
+
 

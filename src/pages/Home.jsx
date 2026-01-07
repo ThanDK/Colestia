@@ -6,7 +6,6 @@ import Button from '../components/Button';
 import { ArrowRight, ArrowLeft, Globe, Shield, Zap, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useDirectors } from '../hooks/useDirectors';
-import { useTeam } from '../hooks/useTeam';
 import { useLanguage } from '../context/LanguageContext';
 
 // Partner logos
@@ -27,7 +26,6 @@ const Home = () => {
     const directorsScrollRef = useRef(null);
     const [selectedDirector, setSelectedDirector] = useState(null);
     const { directors } = useDirectors();
-    const { team: teamMembers } = useTeam();
 
     const scrollDirectors = (direction) => {
         if (directorsScrollRef.current) {
@@ -441,54 +439,6 @@ const Home = () => {
                 </div>
             </section>*/}
 
-            {/* 5. Our Team Section */}
-            <section className="py-24 bg-gradient-to-b from-colestia-bg to-[#050505]">
-                <div className="container mx-auto px-6">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-center mb-16"
-                    >
-                        <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
-                            Our <span className="text-gradient-main">Team</span>
-                        </h2>
-                        <p className="text-gray-400 max-w-2xl mx-auto">
-                            “The leadership team propelling Colestia toward the future of the Thai film industry.”
-                        </p>
-                    </motion.div>
-
-                    {/* Team Grid - Dynamic from shared data */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {teamMembers.map((member, index) => (
-                            <motion.div
-                                key={member.name}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                className="group text-center"
-                            >
-                                <div className="relative mb-6 overflow-hidden rounded-2xl aspect-[3/4]">
-                                    <img
-                                        src={member.image}
-                                        alt={member.name}
-                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                                </div>
-                                <h3 className="text-xl font-display font-bold text-white mb-1 group-hover:text-colestia-purple transition-colors">
-                                    {member.name}
-                                </h3>
-                                <p className="text-colestia-magenta text-sm">{member.role}</p>
-                            </motion.div>
-                        ))}
-                    </div>
-
-
-
-                </div>
-            </section>
 
             {/* Newsletter Subscription Section */}
             <section className="py-20 bg-gradient-to-b from-[#050505] to-colestia-bg">

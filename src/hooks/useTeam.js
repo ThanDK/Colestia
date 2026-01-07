@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import { collection, onSnapshot } from 'firebase/firestore';
-import { db } from '../firebase';
+import { teamMembers as initialTeam } from '../data/teamData';
 
 export const useTeam = () => {
     const [team, setTeam] = useState([]);
@@ -8,30 +7,16 @@ export const useTeam = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        const safetyTimeout = setTimeout(() => {
-            if (isLoading) {
-                console.warn("Firestore snapshot timed out, forcing loading false");
-                setIsLoading(false);
-            }
-        }, 5000);
-
-        const collectionRef = collection(db, 'team');
-        const unsubscribe = onSnapshot(collectionRef, (snapshot) => {
-            const data = snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }));
-            setTeam(data);
-            setIsLoading(false);
-        }, (err) => {
-            console.error("Error fetching team:", err);
-            setError(err);
-            setIsLoading(false);
-        });
-
-        return () => {
-            unsubscribe();
-            clearTimeout(safetyTimeout);
-        };
+        // Use static data directly (mockup mode)
+        const data = initialTeam.map((t, index) => ({
+            ...t,
+            id: `team-${index}`
+        }));
+        setTeam(data);
+        setIsLoading(false);
     }, []);
 
     return { team, isLoading, error };
 };
+
 

@@ -22,6 +22,8 @@ import AdminArticles from './pages/admin/AdminArticles';
 import AdminUsers from './pages/admin/AdminUsers';
 import AdminDirectors from './pages/admin/AdminDirectors';
 import AdminTeam from './pages/admin/AdminTeam';
+import AdminNews from './pages/admin/AdminNews';
+import AdminEducation from './pages/admin/AdminEducation';
 
 // Placeholder content for simple pages
 const PlaceholderPage = ({ title }) => (
@@ -105,6 +107,8 @@ const App = () => {
                 <Route path="users" element={<AdminUsers />} />
                 <Route path="directors" element={<AdminDirectors />} />
                 <Route path="team" element={<AdminTeam />} />
+                <Route path="news" element={<AdminNews />} />
+                <Route path="education" element={<AdminEducation />} />
               </Route>
             </Routes>
           </AnimatePresence>

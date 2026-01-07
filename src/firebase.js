@@ -2,15 +2,15 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-// TODO: Replace the following with your app's Firebase project configuration
-// You can find these in the Firebase Console -> Project Settings
+// Firebase configuration for Colestia
 const firebaseConfig = {
-    apiKey: "API_KEY",
-    authDomain: "PROJECT_ID.firebaseapp.com",
-    projectId: "PROJECT_ID",
-    storageBucket: "PROJECT_ID.appspot.com",
-    messagingSenderId: "SENDER_ID",
-    appId: "APP_ID"
+    apiKey: "AIzaSyD1xrT2o0Lv4d5Ao9n_rM0Kdh6pzuIiyp0",
+    authDomain: "colestia-ee68c.firebaseapp.com",
+    projectId: "colestia-ee68c",
+    storageBucket: "colestia-ee68c.firebasestorage.app",
+    messagingSenderId: "13938263594",
+    appId: "1:13938263594:web:35cb15aaa6a08f5e746553",
+    measurementId: "G-QFTSWKCNR6"
 };
 
 // Initialize Firebase
@@ -21,3 +21,4 @@ export const auth = getAuth(app);
 export const db = getFirestore(app);
 
 export default app;
+
