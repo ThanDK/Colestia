@@ -20,8 +20,7 @@ import logoSEC from '../assets/partners/sec.png';
 
 import Spotlight from '../components/Spotlight';
 import InteractiveGrid from '../components/InteractiveGrid';
-import aboutRetro from '../assets/about_retro.png';
-import aboutClapper from '../assets/about_clapper.png';
+
 
 const Home = () => {
     const { t, language } = useLanguage();
@@ -101,68 +100,119 @@ const Home = () => {
                 </motion.div>
             </section>
 
-            {/* 2. "We are colestia" Section (Moved from About Us) */}
+            {/* 2. "We are colestia" Section */}
             <section className="py-24 bg-colestia-bg relative">
                 <div className="container mx-auto px-6">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                        {/* Left Column */}
+                    <div className="grid md:grid-cols-2 gap-16 items-center">
+                        {/* Text Left */}
                         <motion.div
-                            initial={{ opacity: 0, x: -30 }}
+                            initial={{ opacity: 0, x: -50 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            className="space-y-12"
+                            transition={{ duration: 0.8 }}
+                            className="space-y-8"
                         >
-                            <h1 className="text-5xl md:text-7xl font-display font-medium text-white">
+                            <h2 className="text-5xl md:text-7xl font-display font-medium text-white">
                                 we are <span className="text-colestia-purple">colestia</span>
-                            </h1>
+                            </h2>
 
-                            <div className="border-l-4 border-colestia-purple pl-6 py-1">
-                                <h3 className="text-xl md:text-2xl text-white font-semibold mb-3">
-                                    '<span className="text-colestia-purple">colestia</span> คือพื้นที่ของคนรุ่นใหม่ที่เชื่อในพลังของภาพยนตร์ไทย'
-                                </h3>
-                                <p className="text-gray-300 font-light leading-relaxed indent-8">
-                                    เราเชื่อว่าภาพยนตร์ที่ดีไม่ควรถูกสร้างขึ้นโดยคนเพียงไม่กี่คน แต่ควรเติบโตจากการร่วมแรงร่วมใจของทุกคนที่รักในสิ่งเดียวกัน ที่นี่ผู้สร้างไม่ต้องแบกความฝันไว้เพียงลำพัง และผู้ชมไม่ถูกจำกัดให้เป็นแค่ผู้รับชม ทุกไอเดียควรมีที่ยืน ทุกคนที่รักภาพยนตร์ควรมีโอกาสเป็นส่วนหนึ่งของการสร้างสรรค์
+                            <div className="space-y-6">
+                                <div>
+                                    <h3 className="text-xl md:text-2xl text-white font-semibold mb-3">
+                                        '<span className="text-colestia-purple">colestia</span> คือพื้นที่ของคนรุ่นใหม่ที่เชื่อในพลังของภาพยนตร์ไทย'
+                                    </h3>
+                                    <p className="text-gray-300 font-light leading-relaxed indent-8">
+                                        เราเชื่อว่าภาพยนตร์ที่ดีไม่ควรถูกสร้างขึ้นโดยคนเพียงไม่กี่คน แต่ควรเติบโตจากการร่วมแรงร่วมใจของทุกคนที่รักในสิ่งเดียวกัน ที่นี่ผู้สร้างไม่ต้องแบกความฝันไว้เพียงลำพัง และผู้ชมไม่ถูกจำกัดให้เป็นแค่ผู้รับชม ทุกไอเดียควรมีที่ยืน ทุกคนที่รักภาพยนตร์ควรมีโอกาสเป็นส่วนหนึ่งของการสร้างสรรค์
+                                    </p>
+                                </div>
+                                <div>
+                                    <h3 className="text-xl md:text-2xl text-white font-semibold mb-3">
+                                        '<span className="text-colestia-purple">colestia</span> ให้คุณค่ากับทุกที่มาของทุกความคิด'
+                                    </h3>
+                                    <p className="text-gray-300 font-light leading-relaxed indent-8">
+                                        เราให้ความสำคัญกับสิทธิและความเป็นเจ้าของของผู้สร้างอย่างชัดเจน ทุกความคิด ทุกผลงาน ยังคงเป็นของผู้ที่สร้างมันขึ้นมาอย่างแท้จริง colestia ทำหน้าที่เป็นพื้นที่สนับสนุนและเชื่อมโยง โดยเคารพคุณค่าและลิขสิทธิ์ของทุกไอเดีย
+                                    </p>
+                                </div>
+                                <div>
+                                    <h3 className="text-xl md:text-2xl text-white font-semibold mb-3">
+                                        '<span className="text-colestia-purple">colestia</span> จึงเป็นจุดเชื่อมระหว่างผู้สร้างสรรค์และคนรักภาพยนตร์ไทย'
+                                    </h3>
+                                    <p className="text-gray-300 font-light leading-relaxed indent-8">
+                                        พื้นที่ที่เปิดโอกาสให้ไอเดียได้เกิดขึ้นจริง ให้คนรุ่นใหม่ได้ลอง ได้เติบโต และได้เห็นผลงานของตัวเองก้าวไปไกลกว่าที่เคย เราเปลี่ยนการรับชม ให้กลายเป็นการมีส่วนร่วมและเปิดเส้นทางใหม่ของภาพยนตร์ไทยก้าวไปพร้อมกับทุกคน
+                                        <br className="hidden md:block" /> เดินหน้าไปในทิศทางที่เราเชื่อร่วมกัน
+                                    </p>
+                                </div>
+                                <p className="text-lg md:text-xl text-white font-semibold italic border-l-4 border-gray-700 pl-6 py-2 mt-8">
+                                    นี่ไม่ใช่แค่แพลตฟอร์ม แต่คือจุดเริ่มต้นของบทใหม่ของภาพยนตร์ไทย บทที่เราทุกคนกำลังเขียนไปพร้อมกัน
                                 </p>
-                            </div>
-
-                            <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-                                <img src={aboutClapper} alt="Filmmaking" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" />
                             </div>
                         </motion.div>
 
-                        {/* Right Column */}
+                        {/* Image Right */}
                         <motion.div
-                            initial={{ opacity: 0, x: 30 }}
+                            initial={{ opacity: 0, x: 50 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            className="space-y-12 pt-0 lg:pt-12"
+                            transition={{ duration: 0.8 }}
+                            style={{ y: y1 }}
+                            className="relative h-[500px] rounded-2xl overflow-hidden glass-panel border border-white/10"
                         >
-                            <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-                                <img src={aboutRetro} alt="Retro Workspace" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" />
-                            </div>
+                            <img
+                                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop"
+                                alt="Retro Workspace"
+                                className="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-700"
+                            />
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
 
-                            <div className="border-l-4 border-colestia-purple pl-6 py-1">
-                                <h3 className="text-xl md:text-2xl text-white font-semibold mb-3">
-                                    '<span className="text-colestia-purple">colestia</span> ให้คุณค่ากับทุกที่มาของทุกความคิด'
-                                </h3>
-                                <p className="text-gray-300 font-light leading-relaxed indent-8">
-                                    เราให้ความสำคัญกับสิทธิและความเป็นเจ้าของของผู้สร้างอย่างชัดเจน ทุกความคิด ทุกผลงาน ยังคงเป็นของผู้ที่สร้างมันขึ้นมาอย่างแท้จริง colestia ทำหน้าที่เป็นพื้นที่สนับสนุนและเชื่อมโยง โดยเคารพคุณค่าและลิขสิทธิ์ของทุกไอเดีย
+            {/* 3. "Creative Idea" Section */}
+            <section className="py-24 bg-colestia-bg relative">
+                <div className="container mx-auto px-6">
+                    <div className="grid md:grid-cols-2 gap-16 items-center">
+                        {/* Image Left */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                            style={{ y: y2 }}
+                            className="relative h-[500px] rounded-2xl overflow-hidden glass-panel border border-white/10"
+                        >
+                            <img
+                                src="https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=2070&auto=format&fit=crop"
+                                alt="Filmmaking"
+                                className="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-700"
+                            />
+                        </motion.div>
+
+                        {/* Text Right */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                            className="space-y-6"
+                        >
+                            <h2 className="text-4xl md:text-6xl font-display font-bold leading-tight">
+                                <span className="text-colestia-purple">colestia</span> <span className="text-white">creative idea</span> <br />
+                                <span className="text-colestia-purple">growing</span> <span className="text-white">together</span>
+                            </h2>
+
+                            <div className="space-y-6 text-gray-300 font-light leading-relaxed">
+                                <div>
+                                    <h3 className="text-xl md:text-2xl text-white font-bold mb-2">
+                                        <span className="text-colestia-purple">colestia</span> คือพื้นที่ของเรื่องราวที่กำลังเริ่มต้น
+                                    </h3>
+                                </div>
+                                <p className="indent-8">
+                                    <span className="text-colestia-purple font-medium">colestia</span> ไม่ได้เกิดขึ้นมาเพื่อเป็นเพียงแพลตฟอร์มหนึ่งในอุตสาหกรรมภาพยนตร์ แต่คือพื้นที่ที่เปิดโอกาสให้ <span className="text-colestia-gold">“ความคิด”</span> ได้มีที่ยืน ตั้งแต่ยังเป็นเพียงประกายเล็ก ๆ
+                                </p>
+                                <p className="indent-8">
+                                    เรารวบรวมผู้สร้างสรรค์จากหลากหลายบทบาทตั้งแต่ผู้กำกับ นักเขียน ทีมโปรดักชัน ไปจนถึงผู้ชมที่อยากมีส่วนร่วมกับเรื่องราวมากกว่าการรอชมผลลัพธ์ปลายทาง
                                 </p>
                             </div>
-
-                            <div className="border-l-4 border-colestia-purple pl-6 py-1">
-                                <h3 className="text-xl md:text-2xl text-white font-semibold mb-3">
-                                    '<span className="text-colestia-purple">colestia</span> จึงเป็นจุดเชื่อมระหว่างผู้สร้างสรรค์และคนรักภาพยนตร์ไทย'
-                                </h3>
-                                <p className="text-gray-300 font-light leading-relaxed indent-8">
-                                    พื้นที่ที่เปิดโอกาสให้ไอเดียได้เกิดขึ้นจริง ให้คนรุ่นใหม่ได้ลอง ได้เติบโต และได้เห็นผลงานของตัวเองก้าวไปไกลกว่าที่เคย เราเปลี่ยนการรับชม ให้กลายเป็นการมีส่วนร่วมและเปิดเส้นทางใหม่ของภาพยนตร์ไทยก้าวไปพร้อมกับทุกคน
-                                    <br className="hidden md:block" /> เดินหน้าไปในทิศทางที่เราเชื่อร่วมกัน
-                                </p>
-                            </div>
-
-                            <p className="text-lg md:text-xl text-white font-semibold italic border-l-4 border-gray-700 pl-6 py-2">
-                                นี่ไม่ใช่แค่แพลตฟอร์ม แต่คือจุดเริ่มต้นของบทใหม่ของภาพยนตร์ไทย บทที่เราทุกคนกำลังเขียนไปพร้อมกัน
-                            </p>
                         </motion.div>
                     </div>
                 </div>
