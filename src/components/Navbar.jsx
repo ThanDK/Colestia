@@ -42,8 +42,8 @@ const Navbar = () => {
         >
             <div className="container mx-auto px-6 py-4 flex justify-end items-center relative">
                 {/* Logo - Absolute Top Left */}
-                <Link to="/" className="absolute top-2 left-6 z-50">
-                    <img src={logo} alt="Colestia" className="h-24 w-auto max-w-none" />
+                <Link to="/" className="absolute top-[-160px] -left-10 z-50">
+                    <img src={logo} alt="Colestia" className="h-[400px] w-auto max-w-none" />
                 </Link>
 
                 {/* Desktop Links */}
