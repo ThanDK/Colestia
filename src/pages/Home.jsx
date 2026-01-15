@@ -192,10 +192,10 @@ const Home = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="flex flex-col justify-start h-full pl-0 md:pl-10"
+                            className="flex flex-col pl-0 md:pl-10"
                         >
                             <div className="mb-4">
-                                <h2 className="text-2xl md:text-4xl font-display font-bold leading-tight">
+                                <h2 className="-mt-4 text-2xl md:text-4xl font-display font-bold leading-tight">
                                     <span className="text-colestia-purple">colestia</span> <span className="text-white">{t('home_creative_title_creative')}</span> <span className="text-[#FFD700]">{t('home_creative_title_idea')}</span> <br />
                                     <span className="text-white">{t('home_creative_title_2')}</span> <span className="text-white">{t('home_creative_title_3')}</span>
                                 </h2>
