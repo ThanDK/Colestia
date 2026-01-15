@@ -19,22 +19,87 @@ const AboutUs = () => {
             <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[150px] translate-x-1/3 translate-y-1/3 pointer-events-none" />
 
             <div className="container mx-auto px-6 relative z-10">
-                {/* Page Header */}
+                {/* New Content Section 1: We are colestia */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center mb-24"
+                    className="mb-32 space-y-12"
                 >
-                    <span className="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-colestia-purple text-xs font-bold uppercase tracking-widest mb-4 backdrop-blur-md">
-                        {t('about_us_title')}
-                    </span>
-                    <h1 className="text-5xl md:text-7xl font-display font-bold text-white mb-6">
-                        We are <span className="text-transparent bg-clip-text bg-gradient-to-r from-colestia-purple to-colestia-blue">Colestia</span>
+                    <h1 className="text-4xl md:text-6xl font-display font-medium text-white mb-12">
+                        we are <span className="text-colestia-purple">colestia</span>
                     </h1>
-                    <p className="text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
-                        "Bridging the gap between cinematic storytelling and blockchain innovation."
+
+                    <div className="space-y-8 text-gray-300 font-light leading-relaxed max-w-4xl">
+                        <div>
+                            <h3 className="text-xl md:text-2xl text-white font-semibold mb-3">
+                                '<span className="text-colestia-purple">colestia</span> คือพื้นที่ของคนรุ่นใหม่ที่เชื่อในพลังของภาพยนตร์ไทย'
+                            </h3>
+                            <p className="indent-8">
+                                เราเชื่อว่าภาพยนตร์ที่ดีไม่ควรถูกสร้างขึ้นโดยคนเพียงไม่กี่คน แต่ควรเติบโตจากการร่วมแรงร่วมใจของทุกคนที่รักในสิ่งเดียวกัน ที่นี่ผู้สร้างไม่ต้องแบกความฝันไว้เพียงลำพัง และผู้ชมไม่ถูกจำกัดให้เป็นแค่ผู้รับชม ทุกไอเดียควรมีที่ยืน ทุกคนที่รักภาพยนตร์ควรมีโอกาสเป็นส่วนหนึ่งของการสร้างสรรค์
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 className="text-xl md:text-2xl text-white font-semibold mb-3">
+                                '<span className="text-colestia-purple">colestia</span> ให้คุณค่ากับทุกที่มาของทุกความคิด'
+                            </h3>
+                            <p className="indent-8">
+                                เราให้ความสำคัญกับสิทธิและความเป็นเจ้าของของผู้สร้างอย่างชัดเจน ทุกความคิด ทุกผลงาน ยังคงเป็นของผู้ที่สร้างมันขึ้นมาอย่างแท้จริง colestia ทำหน้าที่เป็นพื้นที่สนับสนุนและเชื่อมโยง โดยเคารพคุณค่าและลิขสิทธิ์ของทุกไอเดีย
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 className="text-xl md:text-2xl text-white font-semibold mb-3">
+                                '<span className="text-colestia-purple">colestia</span> จึงเป็นจุดเชื่อมระหว่างผู้สร้างสรรค์และคนรักภาพยนตร์ไทย'
+                            </h3>
+                            <p className="indent-8">
+                                พื้นที่ที่เปิดโอกาสให้ไอเดียได้เกิดขึ้นจริง ให้คนรุ่นใหม่ได้ลอง ได้เติบโต และได้เห็นผลงานของตัวเองก้าวไปไกลกว่าที่เคย เราเปลี่ยนการรับชม ให้กลายเป็นมีส่วนร่วมและเปิดเส้นทางใหม่ของภาพยนตร์ไทยก้าวไปพร้อมกับทุกคน
+                            </p>
+                        </div>
+                    </div>
+
+                    <p className="text-lg md:text-xl text-white font-semibold italic mt-12 border-l-4 border-colestia-purple pl-6 py-2 bg-white/5 rounded-r-lg">
+                        นี่ไม่ใช่แค่แพลตฟอร์ม แต่คือจุดเริ่มต้นของบทใหม่ของภาพยนตร์ไทย บทที่เราทุกคนกำลังเขียนไปพร้อมกัน
                     </p>
+                </motion.div>
+
+                {/* New Content Section 2: Creative Idea */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mb-32 grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+                >
+                    {/* Left Image Placeholder */}
+                    <div className="relative rounded-2xl overflow-hidden aspect-video bg-gray-800 border border-white/10 shadow-2xl">
+                        {/* Using a placeholder gradient or abstract shape if actual image missing */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-black flex items-center justify-center">
+                            <span className="text-gray-600">Image PlaceHolder</span>
+                        </div>
+                    </div>
+
+                    {/* Right Text */}
+                    <div className="space-y-8">
+                        <h2 className="text-3xl md:text-5xl font-display font-bold leading-tight">
+                            <span className="text-colestia-purple">colestia</span> <span className="text-white">creative idea</span> <br />
+                            <span className="text-colestia-purple">growing</span> <span className="text-white">together</span>
+                        </h2>
+
+                        <div className="space-y-6 text-gray-300 font-light leading-relaxed">
+                            <div>
+                                <h3 className="text-xl text-colestia-purple font-bold mb-2">
+                                    colestia คือพื้นที่ของเรื่องราวที่กำลังเริ่มต้น
+                                </h3>
+                            </div>
+                            <p>
+                                <span className="text-colestia-purple font-semibold">colestia</span> ไม่ได้เกิดขึ้นมาเพื่อเป็นเพียงแพลตฟอร์มหนึ่งในอุตสาหกรรมภาพยนตร์ แต่คือพื้นที่ที่เปิดโอกาสให้ “ความคิด” ได้มีที่ยืน ตั้งแต่ยังเป็นเพียงประกายเล็ก ๆ
+                            </p>
+                            <p>
+                                เรารวบรวมผู้สร้างสรรค์จากหลากหลายบทบาทตั้งแต่ผู้กำกับ นักเขียน ทีมโปรดักชัน ไปจนถึงผู้ชมที่อยากมีส่วนร่วมกับเรื่องราวมากกว่าการรอชมผลลัพธ์ปลายทาง
+                            </p>
+                        </div>
+                    </div>
                 </motion.div>
 
                 {/* Our Partner Section */}
