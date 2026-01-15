@@ -155,7 +155,12 @@ const ProjectDetail = () => {
                                                 <p className="text-gray-400 text-xs uppercase tracking-wider">
                                                     {language === 'th' ? 'ความคืบหน้าการระดมทุน' : 'Funding Progress'}
                                                 </p>
-                                                <span className="text-colestia-purple font-bold text-lg">
+                                                <span className={`font-bold text-lg ${(project.percentage || Math.round((project.currentFunding / project.goalFunding) * 100) || 0) <= 33.3
+                                                    ? 'text-colestia-purple'
+                                                    : (project.percentage || Math.round((project.currentFunding / project.goalFunding) * 100) || 0) <= 66.6
+                                                        ? 'text-colestia-blue'
+                                                        : 'text-[#FFD700]'
+                                                    }`}>
                                                     {project.percentage || Math.round((project.currentFunding / project.goalFunding) * 100) || 0}%
                                                 </span>
                                             </div>
@@ -165,7 +170,12 @@ const ProjectDetail = () => {
                                                     initial={{ width: 0 }}
                                                     animate={{ width: `${Math.min(project.percentage || Math.round((project.currentFunding / project.goalFunding) * 100) || 0, 100)}%` }}
                                                     transition={{ duration: 1.5, ease: "easeOut" }}
-                                                    className="h-full bg-gradient-to-r from-colestia-purple to-colestia-blue rounded-full"
+                                                    className={`h-full rounded-full ${(project.percentage || Math.round((project.currentFunding / project.goalFunding) * 100) || 0) <= 33.3
+                                                        ? 'bg-gradient-to-r from-[#c084fc] to-[#9501ff]'
+                                                        : (project.percentage || Math.round((project.currentFunding / project.goalFunding) * 100) || 0) <= 66.6
+                                                            ? 'bg-gradient-to-r from-[#4facfe] to-[#00f2fe]'
+                                                            : 'bg-gradient-to-r from-[#FFD700] to-[#E5C100]'
+                                                        }`}
                                                 />
                                             </div>
                                             <div className="flex justify-between text-sm">

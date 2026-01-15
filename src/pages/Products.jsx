@@ -90,9 +90,9 @@ const MovieCard = ({ movie, isHovered, isAnyHovered }) => {
 
                         {/* Percentage Badge - มุมขวาบน */}
                         <div className="absolute top-3 right-3">
-                            <span className={`backdrop-blur-sm text-xs font-bold px-3 py-1.5 rounded-full ${movie.percentage >= 67 ? 'bg-green-500/90 text-white' :
-                                movie.percentage >= 34 ? 'bg-amber-500/90 text-white' :
-                                    'bg-red-500/90 text-white'
+                            <span className={`backdrop-blur-sm text-xs font-bold px-3 py-1.5 rounded-full ${movie.percentage <= 33.3 ? 'bg-colestia-purple/90 text-white' :
+                                movie.percentage <= 66.6 ? 'bg-colestia-blue/90 text-white' :
+                                    'bg-gradient-to-r from-[#FFD700] to-[#E5C100] text-black'
                                 }`}>
                                 {movie.percentage}%
                             </span>
@@ -115,8 +115,9 @@ const MovieCard = ({ movie, isHovered, isAnyHovered }) => {
                         <div className="mb-3">
                             <div className="h-2 bg-[#2a2a2a] rounded-full overflow-hidden">
                                 <div
-                                    className={`h-full rounded-full transition-all duration-500 ${movie.percentage >= 34 ? 'bg-gradient-to-r from-[#FFD700] to-[#E5C100]' :
-                                        'bg-gradient-to-r from-red-500 to-orange-400'
+                                    className={`h-full rounded-full transition-all duration-500 ${movie.percentage <= 33.3 ? 'bg-gradient-to-r from-[#c084fc] to-[#9501ff]' :
+                                        movie.percentage <= 66.6 ? 'bg-gradient-to-r from-[#4facfe] to-[#00f2fe]' :
+                                            'bg-gradient-to-r from-[#FFD700] to-[#E5C100]'
                                         }`}
                                     style={{ width: `${movie.percentage}%` }}
                                 />
