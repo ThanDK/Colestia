@@ -192,25 +192,29 @@ const Home = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="space-y-6"
+                            className="flex flex-col justify-center h-full pl-0 md:pl-10"
                         >
-                            <h2 className="text-4xl md:text-6xl font-display font-bold leading-tight">
-                                <span className="text-colestia-purple">colestia</span> <span className="text-white">{t('home_creative_title_1')}</span> <br />
-                                <span className="text-colestia-purple">{t('home_creative_title_2')}</span> <span className="text-white">{t('home_creative_title_3')}</span>
-                            </h2>
+                            <div className="mb-8">
+                                <h2 className="text-4xl md:text-6xl font-display font-bold leading-tight mb-6">
+                                    <span className="text-colestia-purple">colestia</span> <span className="text-white">{t('home_creative_title_1')}</span> <br />
+                                    <span className="text-colestia-purple">{t('home_creative_title_2')}</span> <span className="text-white">{t('home_creative_title_3')}</span>
+                                </h2>
+                                <div className="h-1.5 w-24 bg-gradient-to-r from-colestia-purple to-colestia-blue rounded-full"></div>
+                            </div>
 
-                            <div className="space-y-6 text-gray-300 font-light leading-relaxed">
-                                <div>
-                                    <h3 className="text-xl md:text-2xl text-white font-bold mb-2">
-                                        <span className="text-colestia-purple">colestia</span> {t('home_creative_subtitle_1')}
-                                    </h3>
+                            <div className="space-y-6 text-gray-300 font-light text-lg">
+                                <h3 className="text-xl md:text-2xl text-white font-semibold leading-snug">
+                                    <span className="text-colestia-purple">colestia</span> {t('home_creative_subtitle_1')}
+                                </h3>
+
+                                <div className="space-y-4 leading-relaxed">
+                                    <p>
+                                        <span className="text-colestia-purple font-semibold">colestia</span> {t('home_creative_desc_1')}
+                                    </p>
+                                    <p>
+                                        {t('home_creative_desc_2')}
+                                    </p>
                                 </div>
-                                <p className="indent-8">
-                                    <span className="text-colestia-purple font-medium">colestia</span> {t('home_creative_desc_1')}
-                                </p>
-                                <p className="indent-8">
-                                    {t('home_creative_desc_2')}
-                                </p>
                             </div>
                         </motion.div>
                     </div>
