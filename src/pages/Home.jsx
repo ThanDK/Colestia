@@ -169,7 +169,7 @@ const Home = () => {
             {/* 3. "Creative Idea" Section */}
             <section className="py-24 bg-colestia-bg relative">
                 <div className="container mx-auto px-6">
-                    <div className="grid md:grid-cols-2 gap-16 items-center">
+                    <div className="grid md:grid-cols-2 gap-16 items-start">
                         {/* Image Left */}
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
@@ -192,7 +192,7 @@ const Home = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="flex flex-col justify-center h-full pl-0 md:pl-10"
+                            className="flex flex-col justify-start h-full pl-0 md:pl-10"
                         >
                             <div className="mb-4">
                                 <h2 className="text-2xl md:text-4xl font-display font-bold leading-tight">
