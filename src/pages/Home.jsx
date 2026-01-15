@@ -375,21 +375,21 @@ const Home = () => {
                                         className="h-full"
                                     >
                                         <Spotlight className="h-full rounded-2xl" size={400}>
-                                            <div className="relative bg-[#0a0a0a] rounded-2xl overflow-hidden border border-white/10 group-hover:border-colestia-purple/50 transition-all duration-500 group-hover:shadow-[0_20px_60px_rgba(122,30,166,0.3)] h-full">
+                                            <div className="relative bg-gradient-to-b from-[#daeaff] to-colestia-blue rounded-2xl overflow-hidden border border-white/10 group-hover:border-white/30 transition-all duration-500 group-hover:shadow-[0_20px_60px_rgba(37,99,235,0.3)] h-full">
                                                 <div className="flex flex-col h-full">
                                                     {/* Photo Section - Larger */}
                                                     <div className="relative w-full h-[380px] md:h-[450px] flex-shrink-0 overflow-hidden">
                                                         <img
                                                             src={director.img}
                                                             alt={director.name}
-                                                            className="w-full h-full object-cover object-top"
+                                                            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                                                         />
                                                         {/* Gradient Overlay */}
-                                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                                        <div className="absolute inset-0 bg-gradient-to-t from-colestia-blue via-transparent to-transparent opacity-60" />
                                                     </div>
 
                                                     {/* Info Section */}
-                                                    <div className="flex-1 p-6 flex flex-col relative z-20 bg-[#0a0a0a]">
+                                                    <div className="flex-1 p-6 flex flex-col relative z-20 bg-transparent">
                                                         <h3 className="text-xl font-display font-bold text-white mb-1 group-hover:text-colestia-purple transition-colors">
                                                             {director.name}
                                                         </h3>
