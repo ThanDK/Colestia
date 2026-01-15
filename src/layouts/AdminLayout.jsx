@@ -33,7 +33,7 @@ const AdminLayout = () => {
             {/* Sidebar */}
             <div className="w-64 bg-white dark:bg-gray-800 shadow-xl flex flex-col">
                 <div className="p-6 flex justify-center">
-                    <img src={logo} alt="Colestia Admin" className="h-[300px] w-auto" />
+                    <img src={logo} alt="Colestia Admin" className="h-16 w-auto" />
                 </div>
 
                 <nav className="flex-1 px-4 space-y-2">
