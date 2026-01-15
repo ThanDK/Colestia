@@ -112,7 +112,7 @@ const Home = () => {
                             transition={{ duration: 0.8 }}
                             className="space-y-8"
                         >
-                            <h2 className="text-5xl md:text-7xl font-display font-medium text-white">
+                            <h2 className="text-2xl md:text-4xl font-display font-medium text-white">
                                 {t('home_we_are_title')} <span className="text-colestia-purple">colestia</span>
                             </h2>
 
