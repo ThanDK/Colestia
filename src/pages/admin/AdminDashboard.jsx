@@ -56,7 +56,7 @@ const recentActivities = [
     { type: 'investment', user: 'John D.', action: 'invested ฿50,000 in Space Wars Eternal', time: '5 min ago', icon: DollarSign, color: 'green' },
     { type: 'user', user: 'Sarah M.', action: 'registered as new investor', time: '15 min ago', icon: UserCheck, color: 'blue' },
     { type: 'project', user: 'Admin', action: 'updated Bangkok Ghost Stories details', time: '1 hour ago', icon: Film, color: 'purple' },
-    { type: 'milestone', user: 'System', action: 'Space Wars reached 85% funding goal', time: '2 hours ago', icon: Target, color: 'amber' },
+    { type: 'milestone', user: 'System', action: 'Space Wars reached 85% funding goal', time: '2 hours ago', icon: Target, color: 'blue' },
 ];
 
 const AdminDashboard = () => {
@@ -167,7 +167,7 @@ const AdminDashboard = () => {
 
                 {/* Growth Rate */}
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
-                    className="bg-gradient-to-br from-amber-500 to-orange-600 p-6 rounded-2xl shadow-lg shadow-amber-200 dark:shadow-amber-900/30">
+                    className="bg-gradient-to-br from-colestia-blue to-colestia-purple p-6 rounded-2xl shadow-lg shadow-colestia-purple/20 dark:shadow-colestia-purple/30">
                     <div className="flex items-center justify-between">
                         <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
                             <TrendingUp className="text-white" size={24} />
@@ -266,8 +266,8 @@ const AdminDashboard = () => {
                     className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
                     <div className="flex items-center justify-between mb-6">
                         <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 bg-amber-100 dark:bg-amber-900/30 rounded-xl flex items-center justify-center">
-                                <BarChart3 className="text-amber-600 dark:text-amber-400" size={20} />
+                            <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center">
+                                <BarChart3 className="text-colestia-blue dark:text-blue-400" size={20} />
                             </div>
                             <div>
                                 <h3 className="font-bold text-gray-900 dark:text-white">{labels.revenue}</h3>
@@ -362,7 +362,7 @@ const AdminDashboard = () => {
                                 green: 'bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400',
                                 blue: 'bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400',
                                 purple: 'bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400',
-                                amber: 'bg-amber-100 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400',
+                                amber: 'bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400',
                             };
                             return (
                                 <div key={index} className="flex items-start gap-3">
