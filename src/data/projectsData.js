@@ -22,30 +22,46 @@ export const projects = [
             {
                 tier: 'special',
                 name: 'Executive Producer Credit',
+                nameTh: 'Executive Producer Credit',
+                nameEn: 'Executive Producer Credit',
                 price: 1000000,
                 description: 'ได้รับเครดิตเป็น Executive Producer ในท้ายเครดิตภาพยนตร์ และได้รับเชิญร่วมงานเปิดตัวรอบกาล่าดินเนอร์พร้อมที่นั่ง VIP',
-                items: ['Executive Producer Credit', 'Gala Dinner VIP Seat', 'Private Meet & Greet', 'Signed Poster', 'Limited Edition Box Set']
+                descriptionEn: 'Receive Executive Producer credit in the end credits and an invitation to the Gala Dinner premiere with VIP seating.',
+                items: ['Executive Producer Credit', 'Gala Dinner VIP Seat', 'Private Meet & Greet', 'Signed Poster', 'Limited Edition Box Set'],
+                itemsEn: ['Executive Producer Credit', 'Gala Dinner VIP Seat', 'Private Meet & Greet', 'Signed Poster', 'Limited Edition Box Set']
             },
             {
                 tier: 'platinum',
                 name: 'Associate Producer',
+                nameTh: 'Associate Producer',
+                nameEn: 'Associate Producer',
                 price: 100000,
                 description: 'ได้รับเครดิตเป็น Associate Producer และได้รับสิทธิ์เข้าชมเบื้องหลังการถ่ายทำ',
-                items: ['Associate Producer Credit', 'Behind the Scenes Access', 'Early Screening Ticket', 'Signed Poster']
+                descriptionEn: 'Receive Associate Producer credit and access to behind-the-scenes filming.',
+                items: ['Associate Producer Credit', 'Behind the Scenes Access', 'Early Screening Ticket', 'Signed Poster'],
+                itemsEn: ['Associate Producer Credit', 'Behind the Scenes Access', 'Early Screening Ticket', 'Signed Poster']
             },
             {
                 tier: 'gold',
                 name: 'VIP Set',
+                nameTh: 'ชุด VIP',
+                nameEn: 'VIP Set',
                 price: 10000,
                 description: 'บัตรชมภาพยนตร์รอบพิเศษ 2 ที่นั่ง พร้อมของที่ระลึกรุ่น Limited Edition',
-                items: ['Special Screening Tickets (x2)', 'Limited Edition T-Shirt', 'Digital Wallpaper', 'Thank You Credit']
+                descriptionEn: '2 Special Screening tickets with Limited Edition souvenirs.',
+                items: ['Special Screening Tickets (x2)', 'Limited Edition T-Shirt', 'Digital Wallpaper', 'Thank You Credit'],
+                itemsEn: ['Special Screening Tickets (x2)', 'Limited Edition T-Shirt', 'Digital Wallpaper', 'Thank You Credit']
             },
             {
                 tier: 'silver',
                 name: 'Supporter Set',
+                nameTh: 'ชุดผู้สนับสนุน',
+                nameEn: 'Supporter Set',
                 price: 1000,
                 description: 'บัตรชมภาพยนตร์ 1 ที่นั่ง และโปสการ์ดที่ระลึก',
-                items: ['Movie Ticket (x1)', 'Commemorative Postcard', 'Digital Thank You Card']
+                descriptionEn: '1 Movie Ticket and a commemorative postcard.',
+                items: ['Movie Ticket (x1)', 'Commemorative Postcard', 'Digital Thank You Card'],
+                itemsEn: ['Movie Ticket (x1)', 'Commemorative Postcard', 'Digital Thank You Card']
             }
         ]
     },
@@ -70,23 +86,35 @@ export const projects = [
             {
                 tier: 'special',
                 name: 'Exclusive Island Trip',
+                nameTh: 'ทริปสุดพิเศษเที่ยวเกาะ',
+                nameEn: 'Exclusive Island Trip',
                 price: 500000,
                 description: 'ทริปสุด Exclusive เที่ยวเกาะสถานที่ถ่ายทำพร้อมนักแสดงนำ 3 วัน 2 คืน',
-                items: ['Island Trip with Cast', 'Private Dinner', 'Photo Session', 'Special Thanks Credit']
+                descriptionEn: 'Exclusive 3D2N trip to the filming location island with the lead cast.',
+                items: ['Island Trip with Cast', 'Private Dinner', 'Photo Session', 'Special Thanks Credit'],
+                itemsEn: ['Island Trip with Cast', 'Private Dinner', 'Photo Session', 'Special Thanks Credit']
             },
             {
                 tier: 'platinum',
                 name: 'Premiere Night',
+                nameTh: 'งานเปิดตัวรอบปฐมทัศน์',
+                nameEn: 'Premiere Night',
                 price: 50000,
                 description: 'เข้าร่วมงาน Premiere Night เดินพรมแดงพร้อมนักแสดง',
-                items: ['Premiere Night Ticket', 'Red Carpet Access', 'Photo Op', 'Signed Script']
+                descriptionEn: 'Attend the Premiere Night and walk the red carpet with the cast.',
+                items: ['Premiere Night Ticket', 'Red Carpet Access', 'Photo Op', 'Signed Script'],
+                itemsEn: ['Premiere Night Ticket', 'Red Carpet Access', 'Photo Op', 'Signed Script']
             },
             {
                 tier: 'gold',
                 name: 'Collector Set',
+                nameTh: 'ชุดนักสะสม',
+                nameEn: 'Collector Set',
                 price: 5000,
                 description: 'Photobook เบื้องหลังการถ่ายทำและโปสเตอร์พร้อมลายเซ็น',
-                items: ['Behind the Scenes Photobook', 'Signed Poster', 'Movie Ticket', 'Digital Download']
+                descriptionEn: 'Behind-the-scenes photobook and signed poster.',
+                items: ['Behind the Scenes Photobook', 'Signed Poster', 'Movie Ticket', 'Digital Download'],
+                itemsEn: ['Behind the Scenes Photobook', 'Signed Poster', 'Movie Ticket', 'Digital Download']
             }
         ]
     },
@@ -111,16 +139,24 @@ export const projects = [
             {
                 tier: 'special',
                 name: 'Ghost Hunter Experience',
+                nameTh: 'ประสบการณ์ล่าท้าผี',
+                nameEn: 'Ghost Hunter Experience',
                 price: 200000,
                 description: 'ทริปท้าพิสูจน์สถานที่จริงกับทีมงาน (ปลอดภัย 100%) พร้อมของขลังที่ระลึก',
-                items: ['Location Tour', 'Special Amulet', 'Dinner with Director', 'Executive Credit']
+                descriptionEn: 'Real location tour with the crew (100% safe) plus commemorative amulets.',
+                items: ['Location Tour', 'Special Amulet', 'Dinner with Director', 'Executive Credit'],
+                itemsEn: ['Location Tour', 'Special Amulet', 'Dinner with Director', 'Executive Credit']
             },
             {
                 tier: 'gold',
                 name: 'Brave Heart Set',
+                nameTh: 'ชุดผู้กล้า',
+                nameEn: 'Brave Heart Set',
                 price: 5000,
                 description: 'เสื้อยืดลายพิเศษเรืองแสงในที่มืด และบัตรชมภาพยนตร์',
-                items: ['Glow in Dark T-Shirt', 'Movie Ticket (x2)', 'Special Sticker Set']
+                descriptionEn: 'Special glow-in-the-dark T-shirt and movie tickets.',
+                items: ['Glow in Dark T-Shirt', 'Movie Ticket (x2)', 'Special Sticker Set'],
+                itemsEn: ['Glow in Dark T-Shirt', 'Movie Ticket (x2)', 'Special Sticker Set']
             }
         ]
     },
