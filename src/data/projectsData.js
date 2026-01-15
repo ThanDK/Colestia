@@ -17,7 +17,37 @@ export const projects = [
         investors: 1250,
         onSale: true,
         isNew: false,
-        status: 'active'
+        status: 'active',
+        rewards: [
+            {
+                tier: 'special',
+                name: 'Executive Producer Credit',
+                price: 1000000,
+                description: 'ได้รับเครดิตเป็น Executive Producer ในท้ายเครดิตภาพยนตร์ และได้รับเชิญร่วมงานเปิดตัวรอบกาล่าดินเนอร์พร้อมที่นั่ง VIP',
+                items: ['Executive Producer Credit', 'Gala Dinner VIP Seat', 'Private Meet & Greet', 'Signed Poster', 'Limited Edition Box Set']
+            },
+            {
+                tier: 'platinum',
+                name: 'Associate Producer',
+                price: 100000,
+                description: 'ได้รับเครดิตเป็น Associate Producer และได้รับสิทธิ์เข้าชมเบื้องหลังการถ่ายทำ',
+                items: ['Associate Producer Credit', 'Behind the Scenes Access', 'Early Screening Ticket', 'Signed Poster']
+            },
+            {
+                tier: 'gold',
+                name: 'VIP Set',
+                price: 10000,
+                description: 'บัตรชมภาพยนตร์รอบพิเศษ 2 ที่นั่ง พร้อมของที่ระลึกรุ่น Limited Edition',
+                items: ['Special Screening Tickets (x2)', 'Limited Edition T-Shirt', 'Digital Wallpaper', 'Thank You Credit']
+            },
+            {
+                tier: 'silver',
+                name: 'Supporter Set',
+                price: 1000,
+                description: 'บัตรชมภาพยนตร์ 1 ที่นั่ง และโปสการ์ดที่ระลึก',
+                items: ['Movie Ticket (x1)', 'Commemorative Postcard', 'Digital Thank You Card']
+            }
+        ]
     },
     {
         id: 2,
@@ -35,7 +65,30 @@ export const projects = [
         investors: 980,
         onSale: true,
         isNew: false,
-        status: 'active'
+        status: 'active',
+        rewards: [
+            {
+                tier: 'special',
+                name: 'Exclusive Island Trip',
+                price: 500000,
+                description: 'ทริปสุด Exclusive เที่ยวเกาะสถานที่ถ่ายทำพร้อมนักแสดงนำ 3 วัน 2 คืน',
+                items: ['Island Trip with Cast', 'Private Dinner', 'Photo Session', 'Special Thanks Credit']
+            },
+            {
+                tier: 'platinum',
+                name: 'Premiere Night',
+                price: 50000,
+                description: 'เข้าร่วมงาน Premiere Night เดินพรมแดงพร้อมนักแสดง',
+                items: ['Premiere Night Ticket', 'Red Carpet Access', 'Photo Op', 'Signed Script']
+            },
+            {
+                tier: 'gold',
+                name: 'Collector Set',
+                price: 5000,
+                description: 'Photobook เบื้องหลังการถ่ายทำและโปสเตอร์พร้อมลายเซ็น',
+                items: ['Behind the Scenes Photobook', 'Signed Poster', 'Movie Ticket', 'Digital Download']
+            }
+        ]
     },
     {
         id: 3,
@@ -53,7 +106,23 @@ export const projects = [
         investors: 720,
         onSale: true,
         isNew: false,
-        status: 'active'
+        status: 'active',
+        rewards: [
+            {
+                tier: 'special',
+                name: 'Ghost Hunter Experience',
+                price: 200000,
+                description: 'ทริปท้าพิสูจน์สถานที่จริงกับทีมงาน (ปลอดภัย 100%) พร้อมของขลังที่ระลึก',
+                items: ['Location Tour', 'Special Amulet', 'Dinner with Director', 'Executive Credit']
+            },
+            {
+                tier: 'gold',
+                name: 'Brave Heart Set',
+                price: 5000,
+                description: 'เสื้อยืดลายพิเศษเรืองแสงในที่มืด และบัตรชมภาพยนตร์',
+                items: ['Glow in Dark T-Shirt', 'Movie Ticket (x2)', 'Special Sticker Set']
+            }
+        ]
     },
     {
         id: 4,
