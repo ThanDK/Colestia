@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import { motion, useMotionValue, useSpring, useTransform, useScroll, AnimatePresence } from 'framer-motion';
 import VideoBackground from '../components/VideoBackground';
 import Button from '../components/Button';
-import { ArrowRight, ArrowLeft, Globe, Shield, Zap, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { ArrowRight, ArrowLeft, Globe, Shield, Zap, ChevronLeft, ChevronRight, X, Clapperboard, Lightbulb, Gift, Copyright } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useDirectors } from '../hooks/useDirectors';
 import { useLanguage } from '../context/LanguageContext';
@@ -252,6 +252,73 @@ const Home = () => {
                             <h3 className="text-xl font-bold text-white mb-2">{t('eco_step_3_title')}</h3>
                             <p className="text-sm text-gray-400">{t('eco_step_3_desc')}</p>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* 4. Feature Highlights Section */}
+            <section className="py-24 bg-[#050505] text-white">
+                <div className="container mx-auto px-6">
+                    <div className="grid md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/20">
+                        {/* Feature 1 */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.1 }}
+                            className="flex flex-col items-center text-center px-6 py-8"
+                        >
+                            <Clapperboard size={64} className="text-white mb-6" strokeWidth={1.5} />
+                            <h3 className="text-lg font-bold mb-4 h-12 flex items-center">{t('feature_1_title')}</h3>
+                            <p className="text-gray-400 text-sm font-light leading-relaxed">
+                                {t('feature_1_desc')}
+                            </p>
+                        </motion.div>
+
+                        {/* Feature 2 */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.2 }}
+                            className="flex flex-col items-center text-center px-6 py-8"
+                        >
+                            <Lightbulb size={64} className="text-white mb-6" strokeWidth={1.5} />
+                            <h3 className="text-lg font-bold mb-4 h-12 flex items-center">{t('feature_2_title')}</h3>
+                            <p className="text-gray-400 text-sm font-light leading-relaxed">
+                                {t('feature_2_desc')}
+                            </p>
+                        </motion.div>
+
+                        {/* Feature 3 */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.3 }}
+                            className="flex flex-col items-center text-center px-6 py-8"
+                        >
+                            <Gift size={64} className="text-white mb-6" strokeWidth={1.5} />
+                            <h3 className="text-lg font-bold mb-4 h-12 flex items-center">{t('feature_3_title')}</h3>
+                            <p className="text-gray-400 text-sm font-light leading-relaxed">
+                                {t('feature_3_desc')}
+                            </p>
+                        </motion.div>
+
+                        {/* Feature 4 */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.4 }}
+                            className="flex flex-col items-center text-center px-6 py-8"
+                        >
+                            <Copyright size={64} className="text-white mb-6" strokeWidth={1.5} />
+                            <h3 className="text-lg font-bold mb-4 h-12 flex items-center">{t('feature_4_title')}</h3>
+                            <p className="text-gray-400 text-sm font-light leading-relaxed">
+                                {t('feature_4_desc')}
+                            </p>
+                        </motion.div>
                     </div>
                 </div>
             </section>
