@@ -13,7 +13,7 @@ const Footer = () => {
                     {/* Brand */}
                     <div className="space-y-6">
                         <Link to="/" className="block">
-                            <img src={logo} alt="Colestia" className="h-24 w-auto" />
+                            <img src={logo} alt="Colestia" className="h-48 w-auto" />
                         </Link>
                         <p className="text-gray-400 text-sm leading-relaxed">
                             {t('footer_tagline')}
