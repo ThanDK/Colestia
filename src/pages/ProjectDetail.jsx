@@ -124,6 +124,83 @@ const ProjectDetail = () => {
                             </p>
                         </div>
                     </motion.section>
+
+                    {/* Rewards Section */}
+                    {project.rewards && project.rewards.length > 0 && (
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="mt-16"
+                        >
+                            <h2 className="text-3xl font-display font-bold text-white mb-8 border-l-4 border-colestia-purple pl-4">
+                                {language === 'th' ? 'ของรางวัลพิเศษ' : 'Exclusive Rewards'}
+                            </h2>
+                            <div className="grid gap-6">
+                                {project.rewards.sort((a, b) => b.price - a.price).map((reward, index) => (
+                                    <motion.div
+                                        key={index}
+                                        initial={{ opacity: 0, x: -20 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: index * 0.1 }}
+                                        className={`relative group overflow-hidden rounded-2xl border ${reward.tier === 'special'
+                                                ? 'border-yellow-500/50 bg-gradient-to-br from-gray-900 to-yellow-900/20'
+                                                : 'border-white/10 bg-white/5 hover:border-colestia-purple/50'
+                                            } p-6 transition-all hover:shadow-lg`}
+                                    >
+                                        {reward.tier === 'special' && (
+                                            <div className="absolute top-0 right-0 bg-gradient-to-l from-yellow-500 to-yellow-600 text-black text-xs font-bold px-3 py-1 rounded-bl-lg z-10">
+                                                SPECIAL
+                                            </div>
+                                        )}
+
+                                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
+                                            <div className="flex-1">
+                                                <h3 className={`text-xl font-bold mb-2 ${reward.tier === 'special' ? 'text-yellow-400' : 'text-white'
+                                                    }`}>
+                                                    {reward.name}
+                                                </h3>
+                                                <p className="text-gray-300 font-light text-sm mb-4">
+                                                    {reward.description}
+                                                </p>
+                                                <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                                    {reward.items.map((item, i) => (
+                                                        <li key={i} className="flex items-center text-xs text-gray-400">
+                                                            <span className={`w-1.5 h-1.5 rounded-full mr-2 ${reward.tier === 'special' ? 'bg-yellow-500' : 'bg-colestia-purple'
+                                                                }`} />
+                                                            {item}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+
+                                            <div className="flex flex-col items-start md:items-end gap-3 min-w-[140px] border-t md:border-t-0 md:border-l border-white/10 pt-4 md:pt-0 md:pl-6 pl-0">
+                                                <div className="text-left md:text-right w-full">
+                                                    <span className="text-xs text-gray-500 block">{t('project_min_invest') || 'Minimum Funding'}</span>
+                                                    <span className={`text-2xl font-bold font-mono ${reward.tier === 'special' ? 'text-yellow-400' : 'text-white'
+                                                        }`}>
+                                                        ฿{reward.price.toLocaleString()}
+                                                    </span>
+                                                </div>
+                                                <button className={`w-full py-2 px-4 rounded-xl font-bold text-sm transition-all ${reward.tier === 'special'
+                                                        ? 'bg-gradient-to-r from-yellow-500 to-yellow-600 text-black hover:scale-105'
+                                                        : 'bg-white/10 text-white hover:bg-colestia-purple hover:text-white'
+                                                    }`}>
+                                                    {t('btn_select_reward') || 'Select Reward'}
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        {/* Background Glow for Special Tier */}
+                                        {reward.tier === 'special' && (
+                                            <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-yellow-500/10 blur-[80px] rounded-full pointer-events-none" />
+                                        )}
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </motion.div>
+                    )}
                 </div>
 
                 {/* Sidebar Stats */}
