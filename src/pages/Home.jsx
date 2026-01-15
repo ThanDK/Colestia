@@ -375,7 +375,7 @@ const Home = () => {
                                         className="h-full"
                                     >
                                         <Spotlight className="h-full rounded-2xl" size={400}>
-                                            <div className="relative bg-gradient-to-b from-[#daeaff] to-colestia-blue rounded-2xl overflow-hidden border border-white/10 group-hover:border-white/30 transition-all duration-500 group-hover:shadow-[0_20px_60px_rgba(37,99,235,0.3)] h-full">
+                                            <div className="relative bg-gradient-to-b from-[#e0f2fe] to-[#172554] rounded-2xl overflow-hidden border border-white/10 group-hover:border-white/30 transition-all duration-500 group-hover:shadow-[0_20px_60px_rgba(37,99,235,0.3)] h-full">
                                                 <div className="flex flex-col h-full">
                                                     {/* Photo Section - Larger */}
                                                     <div className="relative w-full h-[380px] md:h-[450px] flex-shrink-0 overflow-hidden">
@@ -385,15 +385,15 @@ const Home = () => {
                                                             className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                                                         />
                                                         {/* Gradient Overlay */}
-                                                        <div className="absolute inset-0 bg-gradient-to-t from-colestia-blue via-transparent to-transparent opacity-60" />
+                                                        <div className="absolute inset-0 bg-gradient-to-t from-[#172554] via-transparent to-transparent opacity-90" />
                                                     </div>
 
                                                     {/* Info Section */}
                                                     <div className="flex-1 p-6 flex flex-col relative z-20 bg-transparent">
-                                                        <h3 className="text-xl font-display font-bold text-white mb-1 group-hover:text-colestia-purple transition-colors">
+                                                        <h3 className="text-2xl font-display font-bold text-white mb-1">
                                                             {director.name}
                                                         </h3>
-                                                        <p className="text-colestia-gold text-sm font-medium mb-3">{director.role}</p>
+                                                        <p className="text-blue-200 text-sm font-medium mb-4">{director.role}</p>
 
                                                         {/* View More Button */}
                                                         <button
@@ -401,7 +401,7 @@ const Home = () => {
                                                                 e.stopPropagation();
                                                                 setSelectedDirector(director);
                                                             }}
-                                                            className="mt-auto px-4 py-2 bg-colestia-purple/20 hover:bg-colestia-purple/40 text-white rounded-lg transition-all duration-300 text-sm font-medium border border-colestia-purple/30 hover:border-colestia-purple/60 relative z-30 cursor-pointer animate-shine"
+                                                            className="mt-auto w-full py-3 bg-[#5b21b6] hover:bg-[#4c1d95] text-white rounded-xl transition-all duration-300 text-sm font-bold shadow-lg hover:shadow-xl hover:scale-[1.02]"
                                                         >
                                                             {t('see_more')}
                                                         </button>
