@@ -23,6 +23,107 @@ const AboutUs = () => {
             <div className="container mx-auto px-6 relative z-10">
 
 
+                {/* Mission & Vision Section - Structured Editorial */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mb-32 md:mb-40 max-w-7xl mx-auto" // Wider container for editorial feel
+                >
+                    {/* Slogan - Sharp & High Contrast */}
+                    <div className="py-20 md:py-32 mb-20 md:mb-32 text-center relative border-b border-white/5">
+                        <h2 className="relative z-10 text-5xl md:text-9xl font-display font-bold tracking-tighter mb-8 text-white leading-[0.9]">
+                            colestia
+                        </h2>
+                        <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 relative z-10">
+                            <p className="text-xl md:text-3xl text-white font-light italic tracking-wide">
+                                {t('about_slogan_en')}
+                            </p>
+                            <span className="hidden md:block w-px h-8 bg-gray-600"></span>
+                            <p className="text-base md:text-lg text-gray-500 font-light tracking-widest uppercase">
+                                {t('about_slogan_th')}
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Mission Statement - Centered Editorial */}
+                    <div className="max-w-4xl mx-auto text-center mb-24 md:mb-40">
+                        <div className="w-px h-16 md:h-24 bg-gradient-to-b from-transparent via-colestia-purple to-transparent mx-auto mb-8 md:mb-12" />
+                        <h1 className="text-2xl md:text-4xl font-light text-white leading-relaxed mb-12">
+                            <span className="font-bold block mb-4 text-transparent bg-clip-text bg-gradient-to-r from-colestia-purple to-colestia-blue">
+                                {t('about_mission_title')}
+                            </span>
+                            {t('about_mission_title_break')}
+                        </h1>
+                        <p className="text-lg md:text-xl text-gray-400 font-light max-w-2xl mx-auto">
+                            {t('about_mission_desc')}
+                        </p>
+                    </div>
+
+                    {/* Origin Story - Grid Layout with Divider */}
+                    <div className="grid md:grid-cols-12 gap-8 md:gap-12 mb-20 md:mb-32 pt-12 border-t border-white/10 items-start">
+                        <div className="md:col-span-4">
+                            <h3 className="text-sm font-bold text-colestia-purple tracking-widest uppercase mb-4">{t('about_header_origin')}</h3>
+                            <h2 className="text-3xl md:text-4xl text-white font-display font-medium">{t('about_origin_title')}</h2>
+                        </div>
+                        <div className="md:col-span-8 grid md:grid-cols-2 gap-8 md:gap-12">
+                            <div>
+                                <h4 className="text-lg text-white font-medium mb-4">{t('about_origin_subtitle')}</h4>
+                                <p className="text-gray-400 leading-relaxed">
+                                    {t('about_origin_text')}
+                                </p>
+                            </div>
+                            <div>
+                                <h4 className="text-lg text-white font-medium mb-4">{t('about_possibility_subtitle')}</h4>
+                                <p className="text-gray-400 leading-relaxed">
+                                    {t('about_possibility_text')}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Roles: Creator vs Supporter - Clean Grid (No Numbers) */}
+                    <div className="grid md:grid-cols-2 gap-px bg-white/5"> {/* Gap for Divider Line */}
+                        {/* Creator Side */}
+                        <div className="bg-[#050505] p-8 md:p-16 relative group hover:bg-white/[0.02] transition-colors duration-500">
+
+                            <div className="relative z-10">
+                                <h3 className="text-sm font-bold text-colestia-purple tracking-widest uppercase mb-4">{t('about_header_creator')}</h3>
+                                <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-2">{t('about_creator_title')}</h2>
+                                <p className="text-xl text-gray-400 italic mb-8 md:mb-12 font-light">"{t('about_creator_quote')}"</p>
+
+                                <p className="text-gray-400 leading-relaxed mb-8 text-lg">
+                                    {t('about_creator_desc')}
+                                </p>
+
+                                <div className="flex items-center gap-4 text-sm text-white/60">
+                                    <div className="w-8 h-px bg-colestia-purple"></div>
+                                    {t('about_creator_note')}
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Supporter Side */}
+                        <div className="bg-[#050505] p-8 md:p-16 relative group hover:bg-white/[0.02] transition-colors duration-500">
+
+                            <div className="relative z-10">
+                                <h3 className="text-sm font-bold text-colestia-blue tracking-widest uppercase mb-4">{t('about_header_supporter')}</h3>
+                                <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-2">{t('about_supporter_title')}</h2>
+                                <p className="text-xl text-gray-400 italic mb-8 md:mb-12 font-light">"{t('about_supporter_quote')}"</p>
+
+                                <p className="text-gray-400 leading-relaxed mb-8 text-lg">
+                                    {t('about_supporter_desc')}
+                                </p>
+
+                                <div className="flex items-center gap-4 text-sm text-white/60">
+                                    <div className="w-8 h-px bg-colestia-blue"></div>
+                                    {t('about_supporter_note')}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </motion.div>
+
                 {/* Our Partner Section */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

@@ -20,7 +20,42 @@ import logoSEC from '../assets/partners/sec.png';
 
 import Spotlight from '../components/Spotlight';
 import InteractiveGrid from '../components/InteractiveGrid';
+import { ChevronDown } from 'lucide-react';
 
+// BentoCard Component - Polished Minimal Design
+const BentoCard = ({ title, description, className = "" }) => {
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -6 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className={`
+                relative overflow-hidden rounded-2xl p-8
+                bg-gradient-to-br from-white/[0.05] to-transparent
+                border border-white/10 hover:border-colestia-purple/40
+                hover:bg-white/[0.08]
+                transition-all duration-500
+                group
+                ${className}
+            `}
+        >
+            {/* Title */}
+            <h3 className="text-lg md:text-xl font-semibold text-white mb-4 leading-snug pr-4">
+                {title}
+            </h3>
+
+            {/* Description */}
+            <p className="text-gray-500 group-hover:text-gray-400 leading-relaxed text-sm transition-colors duration-300">
+                {description}
+            </p>
+
+            {/* Bottom accent line */}
+            <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-colestia-purple to-colestia-magenta group-hover:w-full transition-all duration-500" />
+        </motion.div>
+    );
+};
 
 const Home = () => {
     const { t, language } = useLanguage();
@@ -30,9 +65,10 @@ const Home = () => {
 
     const scrollDirectors = (direction) => {
         if (directorsScrollRef.current) {
-            const scrollAmount = 400;
+            // Scroll by container width (shows next set of cards)
+            const containerWidth = directorsScrollRef.current.clientWidth;
             directorsScrollRef.current.scrollBy({
-                left: direction === 'left' ? -scrollAmount : scrollAmount,
+                left: direction === 'left' ? -containerWidth : containerWidth,
                 behavior: 'smooth'
             });
         }
@@ -57,15 +93,15 @@ const Home = () => {
                     >
 
 
-                        <h1 className="text-5xl md:text-8xl font-display font-bold text-white mb-6 leading-tight">
+                        <h1 className="text-4xl md:text-8xl font-display font-bold text-white mb-6 leading-tight">
                             colestia
                         </h1>
-                        <h2 className="text-5xl md:text-8xl font-display font-bold text-white mb-6 leading-tight">
+                        <h2 className="text-4xl md:text-8xl font-display font-bold text-white mb-6 leading-tight">
                             <span className="text-gradient-main">{t('hero_dream_crafted')}</span>
                         </h2>
 
                         <p
-                            className="text-xl text-white mb-10 max-w-2xl mx-auto font-light leading-relaxed"
+                            className="text-lg md:text-xl text-white mb-10 max-w-2xl mx-auto font-light leading-relaxed px-4 md:px-0"
                             style={{ textShadow: '0 2px 10px rgba(0, 0, 0, 5)' }}
                         >
                             {t('hero_tagline')}
@@ -73,7 +109,7 @@ const Home = () => {
                             <br /><span className="text-white/100 text-md">{t('hero_subtagline')}</span>
                         </p>
 
-                        <div className="flex flex-col md:flex-row gap-4 justify-center">
+                        <div className="flex flex-col md:flex-row gap-4 justify-center px-6 md:px-0">
                             <Link to="/products">
                                 <Button variant="primary" className="w-full md:w-auto">
                                     {t('hero_explore')} <ArrowRight size={18} />
@@ -100,76 +136,47 @@ const Home = () => {
                 </motion.div>
             </section>
 
-            {/* 2. "We are colestia" Section */}
-            <section className="py-24 bg-colestia-bg relative">
+            {/* 2. "We are colestia" Section - Polished Minimal */}
+            <section className="py-20 md:py-28 bg-colestia-bg">
                 <div className="container mx-auto px-6">
-                    <div className="grid md:grid-cols-2 gap-16 items-center">
-                        {/* Text Left */}
-                        <motion.div
-                            initial={{ opacity: 0, x: -50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                            className="space-y-8"
-                        >
-                            <h2 className="text-2xl md:text-4xl font-display font-medium text-white">
-                                {t('home_we_are_title')} <span className="text-colestia-purple">colestia</span>
-                            </h2>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-center mb-16 md:mb-20"
+                    >
+                        <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-6">
+                            {t('home_we_are_title')} <span className="text-gradient-main">colestia</span>
+                        </h2>
+                        <p className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
+                            {t('home_we_are_quote')}
+                        </p>
+                    </motion.div>
 
-                            <div className="space-y-6">
-                                <div>
-                                    <h3 className="text-xl md:text-2xl text-white font-semibold mb-3">
-                                        <span className="text-colestia-purple">colestia</span> {t('home_we_are_subtitle_1')}
-                                    </h3>
-                                    <p className="text-gray-300 font-light leading-relaxed indent-8">
-                                        {t('home_we_are_desc_1')}
-                                    </p>
-                                </div>
-                                <div>
-                                    <h3 className="text-xl md:text-2xl text-white font-semibold mb-3">
-                                        <span className="text-colestia-purple">colestia</span> {t('home_we_are_subtitle_2')}
-                                    </h3>
-                                    <p className="text-gray-300 font-light leading-relaxed indent-8">
-                                        {t('home_we_are_desc_2')}
-                                    </p>
-                                </div>
-                                <div>
-                                    <h3 className="text-xl md:text-2xl text-white font-semibold mb-3">
-                                        <span className="text-colestia-purple">colestia</span> {t('home_we_are_subtitle_3')}
-                                    </h3>
-                                    <p className="text-gray-300 font-light leading-relaxed indent-8">
-                                        {t('home_we_are_desc_3')}
-                                    </p>
-                                </div>
-                                <p className="text-lg md:text-xl text-white font-semibold italic border-l-4 border-gray-700 pl-6 py-2 mt-8">
-                                    {t('home_we_are_quote')}
-                                </p>
-                            </div>
-                        </motion.div>
+                    {/* Grid (Numbers Removed) */}
+                    <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                        <BentoCard
+                            title={t('home_we_are_subtitle_1')}
+                            description={t('home_we_are_desc_1')}
+                        />
 
-                        {/* Image Right */}
-                        <motion.div
-                            initial={{ opacity: 0, x: 50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                            style={{ y: y1 }}
-                            className="relative h-[500px] rounded-2xl overflow-hidden glass-panel border border-white/10"
-                        >
-                            <img
-                                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop"
-                                alt="Retro Workspace"
-                                className="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-700"
-                            />
-                        </motion.div>
+                        <BentoCard
+                            title={t('home_we_are_subtitle_2')}
+                            description={t('home_we_are_desc_2')}
+                        />
+
+                        <BentoCard
+                            title={t('home_we_are_subtitle_3')}
+                            description={t('home_we_are_desc_3')}
+                        />
                     </div>
                 </div>
             </section>
 
             {/* 3. "Creative Idea" Section */}
-            <section className="py-24 bg-colestia-bg relative">
+            <section className="py-20 md:py-24 bg-colestia-bg relative">
                 <div className="container mx-auto px-6">
-                    <div className="grid md:grid-cols-2 gap-16 items-start">
+                    <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
                         {/* Image Left */}
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
@@ -177,7 +184,7 @@ const Home = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
                             style={{ y: y2 }}
-                            className="relative h-[500px] rounded-2xl overflow-hidden glass-panel border border-white/10"
+                            className="relative h-[300px] md:h-[500px] rounded-2xl overflow-hidden glass-panel border border-white/10"
                         >
                             <img
                                 src="https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=2070&auto=format&fit=crop"
@@ -195,7 +202,7 @@ const Home = () => {
                             className="flex flex-col pl-0 md:pl-10"
                         >
                             <div className="mb-4">
-                                <h2 className="-mt-4 text-2xl md:text-4xl font-display font-bold leading-tight">
+                                <h2 className="-mt-4 text-3xl md:text-4xl font-display font-bold leading-tight">
                                     <span className="text-colestia-purple">colestia</span> <span className="text-white">{t('home_creative_title_creative')}</span> <span className="text-[#FFD700]">{t('home_creative_title_idea')}</span> <br />
                                     <span className="text-white">{t('home_creative_title_2')}</span> <span className="text-white">{t('home_creative_title_3')}</span>
                                 </h2>
@@ -220,48 +227,21 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* 3. Ecosystem Flow Diagram (Visualizing the Brief) */}
-            <section className="py-24 bg-colestia-bg">
-                <div className="container mx-auto px-6 text-center">
-                    <h2 className="text-3xl font-display font-bold text-white mb-16">{t('ecosystem_title')}</h2>
-
-                    <div className="grid md:grid-cols-3 gap-8 relative">
-                        {/* Connecting Line (Desktop) */}
-                        <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-colestia-purple/30 to-transparent -translate-y-1/2 z-0" />
-
-                        {/* Step 1 */}
-                        <div className="relative z-10 bg-colestia-card p-8 rounded-2xl border border-colestia-blue/30 shadow-[0_0_30px_rgba(39,52,136,0.4)] mx-auto max-w-xs">
-                            <div className="w-16 h-16 bg-colestia-blue rounded-full flex items-center justify-center mx-auto mb-6 text-white shadow-[0_0_20px_rgba(39,52,136,0.3)]">
-                                <Globe size={32} />
-                            </div>
-                            <h3 className="text-xl font-bold text-white mb-2">{t('eco_step_1_title')}</h3>
-                            <p className="text-sm text-gray-400">{t('eco_step_1_desc')}</p>
-                        </div>
-
-                        {/* Step 2 (Colestia) */}
-                        <div className="relative z-10 bg-colestia-card p-8 rounded-2xl border border-colestia-purple/30 shadow-[0_0_30px_rgba(149,1,255,0.4)] mx-auto max-w-xs">
-                            <div className="w-16 h-16 bg-colestia-purple/10 rounded-full flex items-center justify-center mx-auto mb-6 text-colestia-purple">
-                                <Shield size={32} />
-                            </div>
-                            <h3 className="text-xl font-bold text-white mb-2">{t('eco_step_2_title')}</h3>
-                            <p className="text-sm text-gray-400">{t('eco_step_2_desc')}</p>
-                        </div>
-
-                        {/* Step 3 */}
-                        <div className="relative z-10 bg-colestia-card p-8 rounded-2xl border border-white/20 shadow-[0_0_30px_rgba(255,255,255,0.1)] mx-auto max-w-xs">
-                            <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6 text-white">
-                                <Zap size={32} />
-                            </div>
-                            <h3 className="text-xl font-bold text-white mb-2">{t('eco_step_3_title')}</h3>
-                            <p className="text-sm text-gray-400">{t('eco_step_3_desc')}</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             {/* 4. Feature Highlights Section */}
-            <section className="py-24 bg-colestia-bg text-white">
+            <section className="py-20 md:py-24 bg-colestia-bg text-white">
                 <div className="container mx-auto px-6">
+                    {/* Section Heading */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-center mb-16"
+                    >
+                        <h2 className="text-3xl md:text-4xl font-display font-bold text-white">
+                            {t('home_exclusive_for')} <span className="text-gradient-main">colestian</span>
+                        </h2>
+                    </motion.div>
+
                     <div className="grid md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/20">
                         {/* Feature 1 */}
                         <motion.div
@@ -324,10 +304,10 @@ const Home = () => {
                         </motion.div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* 4. Directors Section - Horizontal Carousel */}
-            <section className="py-24 bg-colestia-bg overflow-hidden">
+            < section className="py-24 bg-colestia-bg overflow-hidden" >
                 <div className="container mx-auto px-6">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -342,94 +322,99 @@ const Home = () => {
                             {t('creators_desc')}
                         </p>
                     </motion.div>
+                </div>
 
-                    {/* Carousel Container */}
-                    <div className="relative">
-                        {/* Left Arrow */}
-                        <button
-                            onClick={() => scrollDirectors('left')}
-                            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-colestia-purple/20 hover:bg-colestia-purple/40 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg hidden md:block"
-                            aria-label="Scroll left"
-                        >
-                            <ChevronLeft size={24} />
-                        </button>
+                {/* Carousel Container - Full Width */}
+                <div className="relative w-full">
+                    {/* Left Arrow */}
+                    <button
+                        onClick={() => scrollDirectors('left')}
+                        className="absolute left-4 md:left-12 top-1/2 -translate-y-1/2 z-10 bg-colestia-purple/20 hover:bg-colestia-purple/40 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg hidden md:block"
+                        aria-label="Scroll left"
+                    >
+                        <ChevronLeft size={24} />
+                    </button>
 
-                        {/* Scrollable Directors Container */}
-                        <div
-                            ref={directorsScrollRef} // Fixed variable name case
-                            className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth px-4 md:px-12"
-                            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-                        >
-                            {directors.map((director, index) => (
+                    {/* Scrollable Directors Container */}
+                    <div
+                        ref={directorsScrollRef}
+                        className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory w-fit mx-auto max-w-full"
+                        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                    >
+                        {directors.map((director, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, x: 50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                className="group flex-shrink-0 w-[280px] md:w-[350px] perspective-1000 snap-center first:pl-4 md:first:pl-8 last:pr-4 md:last:pr-8 py-4"
+                            >
                                 <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, x: 50 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: index * 0.1 }}
-                                    className="group flex-shrink-0 w-[280px] md:w-[350px] perspective-1000"
+                                    whileHover={{ scale: 1.05 }}
+                                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                                    className="h-full"
                                 >
-                                    <motion.div
-                                        whileHover={{ scale: 1.05 }}
-                                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                                        className="h-full"
-                                    >
-                                        <Spotlight className="h-full rounded-2xl" size={400}>
-                                            <div className="relative bg-gradient-to-b from-[#e0f2fe] to-[#172554] rounded-2xl overflow-hidden border border-white/10 group-hover:border-white/30 transition-all duration-500 group-hover:shadow-[0_20px_60px_rgba(37,99,235,0.3)] h-full">
-                                                <div className="flex flex-col h-full">
-                                                    {/* Photo Section - Larger */}
-                                                    <div className="relative w-full h-[380px] md:h-[450px] flex-shrink-0 overflow-hidden">
-                                                        <img
-                                                            src={director.img}
-                                                            alt={director.name}
-                                                            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                                                        />
-                                                        {/* Gradient Overlay */}
-                                                        <div className="absolute inset-0 bg-gradient-to-t from-[#172554] via-transparent to-transparent opacity-90" />
-                                                    </div>
+                                    <Spotlight className="h-full rounded-2xl" size={400}>
+                                        <div className="relative bg-gradient-to-b from-[#1e3a5f] to-[#0f172a] rounded-2xl overflow-hidden border border-white/10 group-hover:border-colestia-purple/40 transition-all duration-500 group-hover:shadow-[0_20px_60px_rgba(147,51,234,0.3)] h-full">
+                                            <div className="flex flex-col h-full">
+                                                {/* Photo Section */}
+                                                <div className="relative w-full h-[380px] md:h-[450px] flex-shrink-0 overflow-hidden">
+                                                    <img
+                                                        src={director.img}
+                                                        alt={director.name}
+                                                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                                                    />
+                                                    {/* Subtle overlay to blend light backgrounds without darkening too much */}
+                                                    <div className="absolute inset-0 bg-[#0f172a]/20" />
+                                                    {/* Gradient Overlay for text readability */}
+                                                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-transparent to-transparent" />
+                                                </div>
 
-                                                    {/* Info Section */}
-                                                    <div className="flex-1 p-6 flex flex-col relative z-20 bg-transparent">
-                                                        <h3 className="text-2xl font-display font-bold text-white mb-1">
-                                                            {director.name}
-                                                        </h3>
-                                                        <p className="text-blue-200 text-sm font-medium mb-4">{director.role}</p>
+                                                {/* Info Section */}
+                                                <div className="flex-1 p-6 flex flex-col relative z-20 bg-transparent">
+                                                    <h3 className="text-2xl font-display font-bold text-white mb-1">
+                                                        {director.name}
+                                                    </h3>
+                                                    <p className="text-blue-200 text-sm font-medium mb-4">{director.role}</p>
 
-                                                        {/* View More Button */}
-                                                        <button
-                                                            onClick={(e) => {
-                                                                e.stopPropagation();
-                                                                setSelectedDirector(director);
-                                                            }}
-                                                            className="mt-auto w-full py-3 bg-[#5b21b6] hover:bg-[#4c1d95] text-white rounded-xl transition-all duration-300 text-sm font-bold shadow-lg hover:shadow-xl hover:scale-[1.02]"
-                                                        >
-                                                            {t('see_more')}
-                                                        </button>
-                                                    </div>
+                                                    {/* View More Button */}
+                                                    <button
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            setSelectedDirector(director);
+                                                        }}
+                                                        className="mt-auto w-full py-3 bg-[#5b21b6] hover:bg-[#4c1d95] text-white rounded-xl transition-all duration-300 text-sm font-bold shadow-lg hover:shadow-xl hover:scale-[1.02]"
+                                                    >
+                                                        {t('see_more')}
+                                                    </button>
                                                 </div>
                                             </div>
-                                        </Spotlight>
-                                    </motion.div>
+                                        </div>
+                                    </Spotlight>
                                 </motion.div>
-                            ))}
-                        </div>
-
-                        {/* Right Arrow */}
-                        <button
-                            onClick={() => scrollDirectors('right')}
-                            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-colestia-purple/20 hover:bg-colestia-purple/40 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg hidden md:block"
-                            aria-label="Scroll right"
-                        >
-                            <ChevronRight size={24} />
-                        </button>
+                            </motion.div>
+                        ))}
                     </div>
+
+                    {/* Right Arrow */}
+                    <button
+                        onClick={() => scrollDirectors('right')}
+                        className="absolute right-4 md:right-12 top-1/2 -translate-y-1/2 z-10 bg-colestia-purple/20 hover:bg-colestia-purple/40 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg hidden md:block"
+                        aria-label="Scroll right"
+                    >
+                        <ChevronRight size={24} />
+                    </button>
+                </div>
+
+                <div className="container mx-auto px-6">
 
                     {/* Scroll Hint for Mobile */}
                     <p className="text-center text-gray-500 text-sm mt-8 md:hidden">
                         {t('swipe_hint')}
                     </p>
                 </div>
-            </section>
+            </section >
 
 
 
@@ -654,8 +639,9 @@ const Home = () => {
                         </motion.div>
                     </AnimatePresence>,
                     document.body
-                )}
-        </div>
+                )
+            }
+        </div >
     );
 };
 

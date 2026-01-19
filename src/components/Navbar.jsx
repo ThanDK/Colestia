@@ -42,8 +42,15 @@ const Navbar = () => {
         >
             <div className="container mx-auto px-6 py-4 flex justify-end items-center relative">
                 {/* Logo - Absolute Top Left */}
-                <Link to="/" className="absolute top-[-160px] -left-10 z-50">
-                    <img src={logo} alt="Colestia" className="h-[400px] w-auto max-w-none" />
+                <Link to="/" className="absolute left-6 top-1/2 -translate-y-1/2 z-50">
+                    <div className="h-14 w-48 overflow-hidden">
+                        <img
+                            src={logo}
+                            alt="Colestia"
+                            className="h-[200px] w-auto object-cover object-left"
+                            style={{ marginTop: '-75px', marginLeft: '-10px' }}
+                        />
+                    </div>
                 </Link>
 
                 {/* Desktop Links */}

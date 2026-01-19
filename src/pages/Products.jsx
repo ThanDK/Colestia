@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Filter, RefreshCcw, Bell, Calendar, X } from 'lucide-react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import { Filter, X } from 'lucide-react';
+// Navbar and Footer are handled in App.jsx
 import Card3D from '../components/Card3D'; // Import Card3D
 import { useLanguage } from '../context/LanguageContext';
 import { useProjects } from '../hooks/useProjects';
@@ -100,12 +99,9 @@ const MovieCard = ({ movie, isHovered, isAnyHovered }) => {
 
                         {/* Title Overlay - อยู่บนรูป */}
                         <div className="absolute bottom-0 left-0 right-0 p-4">
-                            <h3 className="text-white font-bold text-lg mb-0.5 drop-shadow-lg">
-                                {movie.titleTh}
+                            <h3 className="text-white font-bold text-lg mb-0.5 drop-shadow-lg leading-tight">
+                                {language === 'th' ? movie.titleTh : movie.titleEn}
                             </h3>
-                            <p className="text-gray-300 text-xs">
-                                {movie.titleEn}
-                            </p>
                         </div>
                     </div>
 
@@ -225,11 +221,8 @@ const ComingSoonCard = ({ movie }) => {
                         <div className="p-5">
                             {/* Title */}
                             <h3 className="text-white font-bold text-xl mb-1">
-                                {movie.titleTh}
+                                {language === 'th' ? movie.titleTh : movie.titleEn}
                             </h3>
-                            <p className="text-gray-400 text-sm mb-3">
-                                {movie.titleEn}
-                            </p>
 
                             {/* Director */}
                             <div className="flex items-center gap-2 mb-4">

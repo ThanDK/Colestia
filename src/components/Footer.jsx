@@ -9,19 +9,20 @@ const Footer = () => {
     return (
         <footer className="bg-black border-t border-white/10 pt-16 pb-8">
             <div className="container mx-auto px-6">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-                    {/* Brand */}
-                    <div className="space-y-6">
-                        <Link to="/" className="block relative h-24 w-80 overflow-hidden">
-                            <img src={logo} alt="Colestia" className="absolute -top-[160px] -left-10 h-[400px] w-auto max-w-none" />
-                        </Link>
-                        <p className="text-gray-400 text-sm leading-relaxed">
-                            {t('footer_tagline')}
-                        </p>
-                    </div>
+                {/* Brand - Centered at Top */}
+                <div className="flex flex-col items-center text-center mb-16">
+                    <Link to="/" className="block mb-2">
+                        <img src={logo} alt="Colestia" className="h-40 w-auto" />
+                    </Link>
+                    <p className="text-gray-400 text-sm leading-relaxed max-w-lg mx-auto">
+                        {t('footer_tagline')}
+                    </p>
+                </div>
 
+                {/* Links Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 text-center">
                     {/* Quick Links */}
-                    <div>
+                    <div className="flex flex-col items-center">
                         <h4 className="text-white font-bold mb-6">{t('footer_platform')}</h4>
                         <ul className="space-y-4 text-sm text-gray-400">
                             <li><Link to="/products" className="hover:text-colestia-gold transition-colors">{t('nav_projects')}</Link></li>
@@ -30,7 +31,7 @@ const Footer = () => {
                     </div>
 
                     {/* Legal */}
-                    <div>
+                    <div className="flex flex-col items-center">
                         <h4 className="text-white font-bold mb-6">{t('footer_legal')}</h4>
                         <ul className="space-y-4 text-sm text-gray-400">
                             <li><Link to="/privacy" className="hover:text-colestia-gold transition-colors">{t('footer_privacy')}</Link></li>
@@ -39,7 +40,7 @@ const Footer = () => {
                     </div>
 
                     {/* Contact */}
-                    <div>
+                    <div className="flex flex-col items-center">
                         <h4 className="text-white font-bold mb-6">{t('footer_contact')}</h4>
                         <p className="text-gray-400 text-sm">support@colestia.io</p>
                         <p className="text-gray-400 text-sm mt-2">Bangkok, Thailand</p>
@@ -47,7 +48,7 @@ const Footer = () => {
                         {/* Social Media Links */}
                         <div className="mt-6">
                             <p className="text-white text-sm font-semibold mb-3">{t('footer_follow')}</p>
-                            <div className="flex gap-3">
+                            <div className="flex gap-3 justify-center">
                                 <a
                                     href="https://facebook.com"
                                     target="_blank"

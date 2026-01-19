@@ -34,7 +34,10 @@ const initialUsers = [
     }
 ];
 
+import { useHorizontalScroll } from '../../hooks/useHorizontalScroll';
+
 const AdminUsers = () => {
+    const scrollRef = useHorizontalScroll();
     const [users, setUsers] = useState(initialUsers);
     const [isLoading] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
@@ -90,8 +93,8 @@ const AdminUsers = () => {
                     <Loader className="w-8 h-8 animate-spin text-colestia-purple" />
                 </div>
             ) : (
-                <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden">
-                    <table className="w-full">
+                <div ref={scrollRef} className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-x-auto">
+                    <table className="w-full min-w-[800px]">
                         <thead className="bg-gray-50 dark:bg-gray-700/50">
                             <tr>
                                 <th className="px-6 py-4 text-left text-sm font-semibold text-gray-600 dark:text-gray-300">User</th>
