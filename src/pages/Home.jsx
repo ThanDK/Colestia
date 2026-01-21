@@ -250,11 +250,12 @@ const Home = () => {
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
+                            whileHover={{ y: -8, scale: 1.02 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
-                            className="flex flex-col items-center text-center px-4 py-4 md:px-6 md:py-8"
+                            className="flex flex-col items-center text-center px-4 py-4 md:px-6 md:py-8 group cursor-default"
                         >
-                            <Clapperboard size={48} className="text-white mb-4 md:mb-6 md:w-16 md:h-16" strokeWidth={1.5} />
+                            <Clapperboard size={48} className="text-white mb-4 md:mb-6 md:w-16 md:h-16 transition-all duration-300 group-hover:scale-110 group-hover:text-purple-400" strokeWidth={1.5} />
                             <h3 className="text-base md:text-lg font-bold mb-2 md:mb-4 h-auto md:h-12 flex items-start justify-center">{t('feature_1_title')}</h3>
                             <p className="text-gray-400 text-xs md:text-sm font-light leading-relaxed max-w-[250px] mx-auto">
                                 {t('feature_1_desc')}
@@ -265,11 +266,12 @@ const Home = () => {
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
+                            whileHover={{ y: -8, scale: 1.02 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}
-                            className="flex flex-col items-center text-center px-4 py-4 md:px-6 md:py-8"
+                            className="flex flex-col items-center text-center px-4 py-4 md:px-6 md:py-8 group cursor-default"
                         >
-                            <Lightbulb size={48} className="text-white mb-4 md:mb-6 md:w-16 md:h-16" strokeWidth={1.5} />
+                            <Lightbulb size={48} className="text-white mb-4 md:mb-6 md:w-16 md:h-16 transition-all duration-300 group-hover:scale-110 group-hover:text-purple-400" strokeWidth={1.5} />
                             <h3 className="text-base md:text-lg font-bold mb-2 md:mb-4 h-auto md:h-12 flex items-start justify-center">{t('feature_2_title')}</h3>
                             <p className="text-gray-400 text-xs md:text-sm font-light leading-relaxed max-w-[250px] mx-auto">
                                 {t('feature_2_desc')}
@@ -280,11 +282,12 @@ const Home = () => {
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
+                            whileHover={{ y: -8, scale: 1.02 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.3 }}
-                            className="flex flex-col items-center text-center px-4 py-4 md:px-6 md:py-8"
+                            className="flex flex-col items-center text-center px-4 py-4 md:px-6 md:py-8 group cursor-default"
                         >
-                            <Gift size={48} className="text-white mb-4 md:mb-6 md:w-16 md:h-16" strokeWidth={1.5} />
+                            <Gift size={48} className="text-white mb-4 md:mb-6 md:w-16 md:h-16 transition-all duration-300 group-hover:scale-110 group-hover:text-purple-400" strokeWidth={1.5} />
                             <h3 className="text-base md:text-lg font-bold mb-2 md:mb-4 h-auto md:h-12 flex items-start justify-center">{t('feature_3_title')}</h3>
                             <p className="text-gray-400 text-xs md:text-sm font-light leading-relaxed max-w-[250px] mx-auto">
                                 {t('feature_3_desc')}
@@ -295,11 +298,12 @@ const Home = () => {
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
+                            whileHover={{ y: -8, scale: 1.02 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.4 }}
-                            className="flex flex-col items-center text-center px-4 py-4 md:px-6 md:py-8"
+                            className="flex flex-col items-center text-center px-4 py-4 md:px-6 md:py-8 group cursor-default"
                         >
-                            <Copyright size={48} className="text-white mb-4 md:mb-6 md:w-16 md:h-16" strokeWidth={1.5} />
+                            <Copyright size={48} className="text-white mb-4 md:mb-6 md:w-16 md:h-16 transition-all duration-300 group-hover:scale-110 group-hover:text-purple-400" strokeWidth={1.5} />
                             <h3 className="text-base md:text-lg font-bold mb-2 md:mb-4 h-auto md:h-12 flex items-start justify-center">{t('feature_4_title')}</h3>
                             <p className="text-gray-400 text-xs md:text-sm font-light leading-relaxed max-w-[250px] mx-auto">
                                 {t('feature_4_desc')}
