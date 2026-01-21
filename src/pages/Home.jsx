@@ -43,7 +43,7 @@ const BentoCard = ({ title, description, className = "" }) => {
             `}
         >
             {/* Title */}
-            <h3 className="text-lg md:text-xl font-semibold text-white mb-4 leading-snug">
+            <h3 className="text-lg md:text-xl font-semibold text-white mb-4 leading-snug md:h-[3.5rem] flex items-center justify-center">
                 {title}
             </h3>
 
@@ -187,7 +187,6 @@ const Home = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            style={{ y: typeof window !== 'undefined' && window.innerWidth > 768 ? y2 : 0 }}
                             className="relative h-[250px] md:h-[500px] rounded-2xl overflow-hidden glass-panel border border-white/10"
                         >
                             <img
@@ -256,7 +255,7 @@ const Home = () => {
                             className="flex flex-col items-center text-center px-4 py-4 md:px-6 md:py-8"
                         >
                             <Clapperboard size={48} className="text-white mb-4 md:mb-6 md:w-16 md:h-16" strokeWidth={1.5} />
-                            <h3 className="text-base md:text-lg font-bold mb-2 md:mb-4 h-auto md:h-12 flex items-center">{t('feature_1_title')}</h3>
+                            <h3 className="text-base md:text-lg font-bold mb-2 md:mb-4 h-auto md:h-12 flex items-start justify-center">{t('feature_1_title')}</h3>
                             <p className="text-gray-400 text-xs md:text-sm font-light leading-relaxed max-w-[250px] mx-auto">
                                 {t('feature_1_desc')}
                             </p>
@@ -271,7 +270,7 @@ const Home = () => {
                             className="flex flex-col items-center text-center px-4 py-4 md:px-6 md:py-8"
                         >
                             <Lightbulb size={48} className="text-white mb-4 md:mb-6 md:w-16 md:h-16" strokeWidth={1.5} />
-                            <h3 className="text-base md:text-lg font-bold mb-2 md:mb-4 h-auto md:h-12 flex items-center">{t('feature_2_title')}</h3>
+                            <h3 className="text-base md:text-lg font-bold mb-2 md:mb-4 h-auto md:h-12 flex items-start justify-center">{t('feature_2_title')}</h3>
                             <p className="text-gray-400 text-xs md:text-sm font-light leading-relaxed max-w-[250px] mx-auto">
                                 {t('feature_2_desc')}
                             </p>
@@ -286,7 +285,7 @@ const Home = () => {
                             className="flex flex-col items-center text-center px-4 py-4 md:px-6 md:py-8"
                         >
                             <Gift size={48} className="text-white mb-4 md:mb-6 md:w-16 md:h-16" strokeWidth={1.5} />
-                            <h3 className="text-base md:text-lg font-bold mb-2 md:mb-4 h-auto md:h-12 flex items-center">{t('feature_3_title')}</h3>
+                            <h3 className="text-base md:text-lg font-bold mb-2 md:mb-4 h-auto md:h-12 flex items-start justify-center">{t('feature_3_title')}</h3>
                             <p className="text-gray-400 text-xs md:text-sm font-light leading-relaxed max-w-[250px] mx-auto">
                                 {t('feature_3_desc')}
                             </p>
@@ -301,7 +300,7 @@ const Home = () => {
                             className="flex flex-col items-center text-center px-4 py-4 md:px-6 md:py-8"
                         >
                             <Copyright size={48} className="text-white mb-4 md:mb-6 md:w-16 md:h-16" strokeWidth={1.5} />
-                            <h3 className="text-base md:text-lg font-bold mb-2 md:mb-4 h-auto md:h-12 flex items-center">{t('feature_4_title')}</h3>
+                            <h3 className="text-base md:text-lg font-bold mb-2 md:mb-4 h-auto md:h-12 flex items-start justify-center">{t('feature_4_title')}</h3>
                             <p className="text-gray-400 text-xs md:text-sm font-light leading-relaxed max-w-[250px] mx-auto">
                                 {t('feature_4_desc')}
                             </p>

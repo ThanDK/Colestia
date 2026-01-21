@@ -340,7 +340,7 @@ const Products = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="sticky top-24 z-40 mb-12 backdrop-blur-xl bg-black/60 border-y border-white/10 py-4 -mx-6 px-6 md:mx-0 md:px-6 md:rounded-2xl md:border"
+                    className="sticky top-28 z-40 mb-12 backdrop-blur-xl bg-black/60 border-y border-white/10 py-4 -mx-6 px-6 md:mx-0 md:px-6 md:rounded-2xl md:border"
                 >
                     <div className="flex items-center justify-between gap-4 overflow-x-auto scrollbar-hide">
                         <div className="flex items-center gap-2 flex-shrink-0">
@@ -352,12 +352,12 @@ const Products = () => {
 
                         {/* Scrolling Container for Filters */}
                         <div className="flex-1 overflow-x-auto scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
-                            <div className="flex gap-2 min-w-max pb-2 md:pb-0">
+                            <div className="flex gap-1.5 min-w-max pb-2 md:pb-0 pr-6 md:pr-0">
                                 {GENRES.map((genre) => (
                                     <button
                                         key={genre.id}
                                         onClick={() => setSelectedGenre(genre.id)}
-                                        className={`relative px-4 py-1.5 rounded-full text-xs font-bold transition-all whitespace-nowrap ${selectedGenre === genre.id
+                                        className={`relative px-3 py-2 rounded-lg text-xs font-bold transition-all whitespace-nowrap ${selectedGenre === genre.id
                                             ? 'text-white bg-white/10 border border-white/20 shadow-[0_0_15px_rgba(255,255,255,0.2)]'
                                             : 'text-gray-400 hover:text-white hover:bg-white/5'
                                             }`}
@@ -366,7 +366,7 @@ const Products = () => {
                                         {selectedGenre === genre.id && (
                                             <motion.div
                                                 layoutId="activeFilter"
-                                                className="absolute inset-0 bg-white/5 rounded-full -z-10"
+                                                className="absolute inset-0 bg-white/5 rounded-lg -z-10"
                                                 transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                                             />
                                         )}

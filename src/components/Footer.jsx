@@ -10,9 +10,9 @@ const Footer = () => {
         <footer className="bg-black border-t border-white/10 pt-16 pb-8">
             <div className="container mx-auto px-6">
                 {/* Brand - Centered at Top */}
-                <div className="flex flex-col items-center text-center mb-16">
-                    <Link to="/" className="block mb-2">
-                        <img src={logo} alt="Colestia" className="h-40 w-auto" />
+                <div className="flex flex-col items-center text-center mb-12">
+                    <Link to="/" className="block mb-1">
+                        <img src={logo} alt="Colestia" className="h-48 w-auto" />
                     </Link>
                     <p className="text-gray-400 text-sm leading-relaxed max-w-lg mx-auto">
                         {t('footer_tagline')}

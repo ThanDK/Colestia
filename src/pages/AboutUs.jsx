@@ -50,7 +50,7 @@ const AboutUs = () => {
                     <div className="max-w-4xl mx-auto text-center mb-16 md:mb-40">
                         <div className="w-px h-12 md:h-24 bg-gradient-to-b from-transparent via-colestia-purple to-transparent mx-auto mb-6 md:mb-12" />
                         <h1 className="text-xl md:text-4xl font-light text-white leading-relaxed mb-8 md:mb-12 text-balance">
-                            <span className="font-bold block mb-3 md:mb-4 text-transparent bg-clip-text bg-gradient-to-r from-colestia-purple to-colestia-blue">
+                            <span className="font-bold block mb-3 md:mb-4 text-transparent bg-clip-text bg-gradient-to-r from-colestia-purple to-colestia-blue py-1 leading-normal">
                                 {t('about_mission_title')}
                             </span>
                             {t('about_mission_title_break')}
@@ -66,7 +66,7 @@ const AboutUs = () => {
                             <h3 className="text-sm font-bold text-colestia-purple tracking-widest uppercase mb-4">{t('about_header_origin')}</h3>
                             <h2 className="text-3xl md:text-4xl text-white font-display font-medium text-balance">{t('about_origin_title')}</h2>
                         </div>
-                        <div className="md:col-span-8 grid md:grid-cols-2 gap-8 md:gap-12">
+                        <div className="md:col-span-8 grid md:grid-cols-2 gap-8 md:gap-24">
                             <div>
                                 <h4 className="text-lg text-white font-medium mb-4">{t('about_origin_subtitle')}</h4>
                                 <p className="text-gray-400 leading-relaxed">
@@ -177,7 +177,7 @@ const AboutUs = () => {
                     </div>
 
                     {/* Mobile: Horizontal Scroll | Desktop: Grid */}
-                    <div className="flex overflow-x-auto snap-x snap-mandatory pb-8 -mx-6 px-6 md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-8 md:overflow-visible scrollbar-hide">
+                    <div className="flex overflow-x-auto snap-x snap-mandatory pb-8 -mx-6 px-6 md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-16 lg:gap-24 md:overflow-visible scrollbar-hide">
                         {teamMembers.map((member, index) => (
                             <motion.div
                                 key={index}
