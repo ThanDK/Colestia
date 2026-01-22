@@ -294,7 +294,7 @@ const Home = () => {
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ delay: index * 0.1 }}
-                                        className="flex-shrink-0 w-[240px] md:w-[280px] snap-start"
+                                        className="flex-shrink-0 w-[180px] md:w-[320px] snap-center"
                                     >
                                         <div className="group relative rounded-2xl overflow-hidden aspect-[2/3] border border-white/10 hover:border-colestia-purple/50 transition-colors duration-500 shadow-lg">
                                             {/* Poster Image */}
