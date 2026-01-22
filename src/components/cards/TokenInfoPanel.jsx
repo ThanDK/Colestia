@@ -65,7 +65,7 @@ const TokenInfoPanel = ({ tokenData }) => {
             {/* Lifecycle */}
             <div className="mb-6">
                 <h4 className="text-xs text-gray-500 uppercase tracking-wider mb-3">Token Lifecycle</h4>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                     {tokenData.lifecycle?.map((stage, idx) => (
                         <React.Fragment key={idx}>
                             <span className="px-3 py-1.5 bg-gradient-to-r from-colestia-purple/20 to-colestia-blue/20 text-white text-xs font-medium rounded-lg border border-white/10 capitalize">

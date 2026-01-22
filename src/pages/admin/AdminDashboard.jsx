@@ -304,7 +304,7 @@ const AdminDashboard = () => {
                                     <h4 className="font-semibold text-gray-900 dark:text-white">{project.name}</h4>
                                     <p className="text-sm text-gray-500">{project.investors} {t('admin_dash_people').toLowerCase()} • {project.funding}</p>
                                 </div>
-                                <div className="w-32">
+                                <div className="hidden sm:block w-32">
                                     <div className="flex items-center justify-between text-sm mb-1">
                                         <span className="text-gray-500">{t('admin_dash_progress')}</span>
                                         <span className="font-medium text-gray-900 dark:text-white">{project.progress}%</span>

@@ -77,7 +77,7 @@ const FinancialBreakdown = ({ financialData }) => {
                 <h4 className="text-xs text-gray-500 uppercase tracking-wider mb-3 flex items-center gap-2">
                     <TrendingUp className="w-3 h-3" /> Revenue Sources
                 </h4>
-                <div className="grid grid-cols-3 gap-2">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                     {financialData.revenue_sources?.map((source, idx) => {
                         const Icon = revenueIcons[source] || DollarSign;
                         return (

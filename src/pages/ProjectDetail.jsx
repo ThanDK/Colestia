@@ -194,7 +194,7 @@ const ProjectDetail = () => {
 
                     {/* LEFT COLUMN: Content (8 cols) */}
                     <div className="lg:col-span-8">
-                        <div className="flex items-center gap-8 border-b border-white/10 mb-8 sticky top-20 bg-[#050505]/95 backdrop-blur z-30 pt-4">
+                        <div className="flex items-center gap-8 border-b border-white/10 mb-8 sticky top-20 bg-[#050505]/95 backdrop-blur z-30 pt-4 overflow-x-auto whitespace-nowrap scrollbar-hide">
                             {['story', 'rewards', 'cast'].map((tab) => (
                                 <button
                                     key={tab}
