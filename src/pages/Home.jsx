@@ -150,21 +150,32 @@ const Home = () => {
 
     return (
         <div className="w-full">
-            {/* 1. Hero Section - Clean Video with Buttons at Bottom */}
-            <section className="relative h-screen overflow-hidden">
-                <VideoBackground />
-                <InteractiveGrid />
+            {/* 1. Hero Section - Responsive Video */}
+            {/* Desktop: Full screen video | Mobile: Contained rounded box */}
+            <section className="bg-colestia-bg">
+                {/* Desktop Layout */}
+                <div className="hidden md:block relative h-[100dvh] overflow-hidden">
+                    <VideoBackground />
+                    <InteractiveGrid />
 
-                {/* Scroll Indicator - At Bottom of Video */}
-                <motion.div
-                    animate={{ y: [0, 10, 0] }}
-                    transition={{ repeat: Infinity, duration: 2 }}
-                    className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20"
-                >
-                    <div className="w-5 h-9 md:w-6 md:h-10 border-2 border-white/30 rounded-full flex justify-center p-2">
-                        <div className="w-1 h-1.5 md:h-2 bg-white rounded-full" />
+                    {/* Scroll Indicator */}
+                    <motion.div
+                        animate={{ y: [0, 10, 0] }}
+                        transition={{ repeat: Infinity, duration: 2 }}
+                        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20"
+                    >
+                        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-2">
+                            <div className="w-1 h-2 bg-white rounded-full" />
+                        </div>
+                    </motion.div>
+                </div>
+
+                {/* Mobile Layout */}
+                <div className="md:hidden pt-24 px-4 pb-8">
+                    <div className="relative aspect-video rounded-2xl overflow-hidden">
+                        <VideoBackground />
                     </div>
-                </motion.div>
+                </div>
             </section>
 
             {/* Hero Text Section - Below Video */}
