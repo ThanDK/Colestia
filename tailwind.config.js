@@ -16,6 +16,8 @@ export default {
                     magenta: '#c084fc',  // Lighter Purple (Highlights)
                     gold: '#c084fc',     // Replaced Gold with Light Purple
                     blue: '#273488',     // Deep Blue (Secondary)
+                    yellow: '#FFD700',   // Button hover accent
+                    'yellow-hover': '#FDB931', // Darker yellow for hover
                     white: '#FFFFFF',
 
                     // Gradients

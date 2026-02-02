@@ -150,36 +150,40 @@ const Home = () => {
 
     return (
         <div className="w-full">
-            {/* 1. Hero Section "Dream Crafted" */}
-            <section className="relative h-screen flex items-center justify-center overflow-hidden">
+            {/* 1. Hero Section - Clean Video with Buttons at Bottom */}
+            <section className="relative h-screen overflow-hidden">
                 <VideoBackground />
                 <InteractiveGrid />
 
-                <div className="relative z-20 text-center px-4 md:px-6 max-w-5xl mx-auto">
+                {/* Scroll Indicator - At Bottom of Video */}
+                <motion.div
+                    animate={{ y: [0, 10, 0] }}
+                    transition={{ repeat: Infinity, duration: 2 }}
+                    className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20"
+                >
+                    <div className="w-5 h-9 md:w-6 md:h-10 border-2 border-white/30 rounded-full flex justify-center p-2">
+                        <div className="w-1 h-1.5 md:h-2 bg-white rounded-full" />
+                    </div>
+                </motion.div>
+            </section>
+
+            {/* Hero Text Section - Below Video */}
+            <section className="py-16 md:py-24 bg-colestia-bg">
+                <div className="container mx-auto px-4 md:px-6">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="max-w-4xl mx-auto text-center"
                     >
-
-
-                        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-display font-bold text-white mb-2 md:mb-6 leading-tight tracking-tight">
-                            colestia
-                        </h1>
-                        <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-display font-bold text-white mb-6 leading-tight">
+                        <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-bold text-white mb-6 leading-tight">
                             <span className="text-gradient-main">{t('hero_dream_crafted')}</span>
                         </h2>
-
-                        <p
-                            className="text-base sm:text-lg md:text-xl text-white mb-8 md:mb-10 max-w-xl md:max-w-2xl mx-auto font-light leading-relaxed px-2 md:px-0"
-                            style={{ textShadow: '0 2px 10px rgba(0, 0, 0, 5)' }}
-                        >
+                        <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed mb-8">
                             {t('hero_tagline')}
-
-                            <br /><span className="text-white/100 text-sm md:text-md mt-2 block">{t('hero_subtagline')}</span>
+                            <br /><span className="text-gray-400 text-sm md:text-base mt-2 block">{t('hero_subtagline')}</span>
                         </p>
-
-                        <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-6 md:px-0">
+                        <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
                             <Link to="/get-started" className="w-full sm:w-auto">
                                 <Button variant="primary" className="w-full sm:w-auto py-3 md:py-4 text-sm md:text-base">
                                     {t('btn_invest')} <ArrowRight size={18} />
@@ -193,17 +197,6 @@ const Home = () => {
                         </div>
                     </motion.div>
                 </div>
-
-                {/* Scroll Indicator */}
-                <motion.div
-                    animate={{ y: [0, 10, 0] }}
-                    transition={{ repeat: Infinity, duration: 2 }}
-                    className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 z-20"
-                >
-                    <div className="w-5 h-9 md:w-6 md:h-10 border-2 border-white/30 rounded-full flex justify-center p-2">
-                        <div className="w-1 h-1.5 md:h-2 bg-white rounded-full" />
-                    </div>
-                </motion.div>
             </section>
 
             {/* 2. "We are colestia" Section - Polished Minimal */}
@@ -223,7 +216,7 @@ const Home = () => {
                         </p>
                     </motion.div>
 
-                    {/* Grid (Numbers Removed) */}
+                    {/* Grid - 3 Cards */}
                     <div className="grid md:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto px-2 md:px-0">
                         <BentoCard
                             title={t('home_we_are_subtitle_1')}
@@ -344,31 +337,20 @@ const Home = () => {
                         </Link>
                     </motion.div>
 
-                    <div className="relative group/carousel">
-                        {/* Navigation Arrows */}
-                        <button
-                            onClick={() => scrollMovies('left')}
-                            className="absolute -left-4 md:-left-8 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-colestia-purple/80 backdrop-blur-md text-white p-2 md:p-3 rounded-full transition-all duration-300 shadow-xl opacity-0 group-hover/carousel:opacity-100 hidden md:block"
-                        >
-                            <ChevronLeft size={20} />
-                        </button>
-
-                        <div
-                            ref={moviesScrollRef}
-                            className="flex gap-4 md:gap-6 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory px-2 pb-4"
-                            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-                        >
-                            {projects
-                                .sort((a, b) => b.percentage - a.percentage)
-                                .map((project, index) => (
-                                    <motion.div
-                                        key={project.id}
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: index * 0.1 }}
-                                        className="flex-shrink-0 w-[180px] md:w-[320px] snap-center"
-                                    >
+                    {/* Projects Grid - 4 Featured Items */}
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                        {projects
+                            .sort((a, b) => b.percentage - a.percentage)
+                            .slice(0, 4)
+                            .map((project, index) => (
+                                <motion.div
+                                    key={project.id}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.1 }}
+                                >
+                                    <Link to={`/project/${project.id}`} className="block">
                                         <div className="group relative rounded-2xl overflow-hidden aspect-[2/3] border border-white/10 hover:border-colestia-purple/50 transition-colors duration-500 shadow-lg">
                                             {/* Poster Image */}
                                             <img
@@ -381,54 +363,38 @@ const Home = () => {
                                             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300" />
 
                                             {/* Content */}
-                                            <div className="absolute bottom-0 left-0 w-full p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                                            <div className="absolute bottom-0 left-0 w-full p-4">
                                                 {/* Genre Badge */}
                                                 <span className="inline-block px-2 py-0.5 bg-colestia-purple/20 text-colestia-magenta text-[10px] font-bold uppercase tracking-wider rounded-full mb-2 backdrop-blur-sm border border-colestia-purple/30">
                                                     {project.genre}
                                                 </span>
 
-                                                <h3 className="text-lg font-bold text-white leading-tight mb-1 truncate">
+                                                <h3 className="text-base md:text-lg font-bold text-white leading-tight mb-1 truncate">
                                                     {language === 'th' ? project.titleTh : project.titleEn}
                                                 </h3>
 
-                                                {/* Funding Info */}
-                                                <div className="space-y-2 mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                {/* Funding Progress */}
+                                                <div className="space-y-1 mb-3">
                                                     <div className="w-full h-1 bg-white/20 rounded-full overflow-hidden">
                                                         <div
                                                             className="h-full bg-gradient-to-r from-colestia-purple to-colestia-blue"
                                                             style={{ width: `${Math.min(project.percentage, 100)}%` }}
                                                         />
                                                     </div>
-                                                    <div className="flex justify-between text-[10px] font-medium text-white/80">
-                                                        <span>{project.percentage}% {t('admin_projects_funded')}</span>
-                                                    </div>
+                                                    <span className="text-[10px] font-medium text-white/80">
+                                                        {project.percentage}% {t('admin_projects_funded')}
+                                                    </span>
                                                 </div>
 
-                                                {/* Action Buttons */}
-                                                <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                                                    <Link to={`/project/${project.id}`} className="flex-1">
-                                                        <button className="w-full py-2 bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold rounded-lg hover:bg-white/20 transition-all">
-                                                            {t('btn_view_details_short') || t('btn_view_details')}
-                                                        </button>
-                                                    </Link>
-                                                    <Link to={`/project/${project.id}`} className="flex-1">
-                                                        <button className="w-full py-2 bg-colestia-purple text-white text-xs font-bold rounded-lg hover:bg-colestia-purple/80 transition-all">
-                                                            {t('btn_invest')}
-                                                        </button>
-                                                    </Link>
-                                                </div>
+                                                {/* Single CTA Button - Shows on Hover */}
+                                                <button className="w-full py-2 bg-colestia-purple hover:bg-colestia-yellow text-white text-xs font-bold rounded-lg transition-all opacity-0 group-hover:opacity-100">
+                                                    {t('btn_view_details')}
+                                                </button>
                                             </div>
                                         </div>
-                                    </motion.div>
-                                ))}
-                        </div>
-
-                        <button
-                            onClick={() => scrollMovies('right')}
-                            className="absolute -right-4 md:-right-8 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-colestia-purple/80 backdrop-blur-md text-white p-2 md:p-3 rounded-full transition-all duration-300 shadow-xl opacity-0 group-hover/carousel:opacity-100 hidden md:block"
-                        >
-                            <ChevronRight size={20} />
-                        </button>
+                                    </Link>
+                                </motion.div>
+                            ))}
                     </div>
                     <div className="mt-8 md:hidden text-center">
                         <Link to="/products">

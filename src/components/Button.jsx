@@ -5,8 +5,8 @@ const Button = ({ children, variant = 'primary', className = '', onClick, ...pro
     const baseStyle = "px-8 py-3 rounded-full font-medium transition-all duration-300 flex items-center gap-2 justify-center relative overflow-hidden group";
 
     const variants = {
-        // Primary: The Main Gradient
-        primary: "bg-colestia-gradient text-white shadow-[0_0_20px_rgba(122,30,166,0.5)] hover:shadow-[0_0_40px_rgba(201,43,141,0.8)] hover:scale-110 active:scale-95 border border-transparent",
+        // Primary: The Main Gradient with Yellow Hover
+        primary: "bg-colestia-gradient text-white shadow-[0_0_20px_rgba(122,30,166,0.5)] hover:bg-colestia-yellow hover:shadow-[0_0_40px_rgba(255,215,0,0.6)] hover:scale-110 active:scale-95 border border-transparent",
 
         // Outline: White border, gradient text on hover
         outline: "bg-transparent text-white border border-white/30 hover:border-white hover:bg-white/5",
